@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import AddressService from"../../services/AddressService";
+import AddressService from"../../service/AddressService";
 
 class Address extends Component
 {
@@ -71,11 +71,11 @@ deleteAddressById = (addressId) => {
                               <td>{address.landmark}</td>
                               <td>
                               <i style={{marginLeft:"10px",color:"blue"}}
-                    onClick = { () => this.getAdmissionId(address.addressId)} className="fa fa-eye"/>
+                    onClick = { () => this.getAddressId(address.addressId)} className="fa fa-eye"/>
                     <i style={{marginLeft:"10px",color:"blue"}}
-                    onClick = { () => this.deleteAdmissionById(address.addressId)} className="fa fa-trash"/>
+                    onClick = { () => this.deleteAddressById(address.addressId)} className="fa fa-trash"/>
                     <i style={{marginLeft:"10px",color:"blue"}}
-                    onClick = { () => this.updateAdmission(address.addressId)} className="fa fa-edit"/>
+                    onClick = { () => this.updateAddress(address.addressId)} className="fa fa-edit"/>
                               </td>
                               </tr>
 

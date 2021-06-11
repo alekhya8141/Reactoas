@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DocumentService from '../../services/DocumentService';
+import DocumentService from '../../service/DocumentService';
 
 class UpdateDocument extends Component {
 

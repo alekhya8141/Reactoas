@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import DocumentService from'../../services/DocumentService';
+import DocumentService from'../../service/DocumentService';
 
 class Document extends Component
 {
@@ -68,11 +68,11 @@ deleteDocumentById = (documentid) => {
                               <td>{document.documentStatus}</td>
                               <td>
                               <i style={{marginLeft:"10px",color:"blue"}}
-                    onClick = { () => this.getAdmissionId(document.documentid)} className="fa fa-eye"/>
+                    onClick = { () => this.getDocumentId(document.documentid)} className="fa fa-eye"/>
                     <i style={{marginLeft:"10px",color:"blue"}}
-                    onClick = { () => this.deleteAdmissionById(document.documentid)} className="fa fa-trash"/>
+                    onClick = { () => this.deleteDocumentById(document.documentid)} className="fa fa-trash"/>
                     <i style={{marginLeft:"10px",color:"blue"}}
-                    onClick = { () => this.updateAdmission(document.documentid)} className="fa fa-edit"/>
+                    onClick = { () => this.updateDocument(document.documentid)} className="fa fa-edit"/>
                               </td>
 
                               </tr>

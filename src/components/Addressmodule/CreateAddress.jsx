@@ -1,5 +1,5 @@
 import React,{ Component } from 'react'
-import AddressService from '../../services/AddressService';
+import AddressService from '../../service/AddressService';
   
 class CreateAddress extends Component{
     constructor(props){
