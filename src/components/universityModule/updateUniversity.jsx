@@ -1,40 +1,40 @@
 import React, { Component } from 'react';
-import UniversityService from '../services/UniversityService';
+import UniversityService from '../../service/universityService';
 
 class UpdateUniversity extends Component {
 
     constructor(props){
         super(props)
         this.state = {
-            universityid:this.props.match.params.universityid,
+            universityId:this.props.match.params.universityId,
             name :'',
             
 
         }
-        this.changeuniversityidHandler=this.changeuniversityidHandler.bind(this);
+        this.changeuniversityIdHandler=this.changeuniversityIdHandler.bind(this);
         this.changenameHandler=this.changenameHandler.bind(this);
         this.updateUniversity=this.updateUniversity.bind(this);
     }
 
     componentDidMount(){
-        UniversityService.getUniversityById(this.state.universityid).then((res) =>{
+        UniversityService.getUniversityById(this.state.universityId).then((res) =>{
             let university=res.data;
-            this.setState({universityid:university.universityid,name:university.name});
+            this.setState({universityId:university.universityId,name:university.name});
         });
     }
 
     updateUniversity = (e) => {
         e.preventDefault();
-        let university={universityid:this.state.universityid,name:this.state.name};
+        let university={universityId:this.state.universityId,name:this.state.name};
         console.log('university => '+ JSON.stringify(university));
 
-        UniversityService.updateUniversity(this.state.universityid,university).then((res) => {
+        UniversityService.updateUniversity(this.state.universityId,university).then((res) => {
               this.props.history.push(`/university`);
         });
 
     }
     
-    changeuniversityidHandler =(event) =>{
+    changeuniversityIdHandler =(event) =>{
         this.setState({universityid:event.target.value});
     }
     changenameHandler= (event) => {
@@ -52,14 +52,14 @@ class UpdateUniversity extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="caed col-md-6 offset-md-3 offset-md-3">
-                            <h3 className="text-center">Update University</h3>
+                            <h3 className="text-left">Update University</h3>
                             <div className="card-body">
                                 <form>
-                                    <h1>{this.props.match.params.universityid}</h1>
+                                    <h1>{this.props.match.params.universityId}</h1>
                         
                                     <div className="form-group">
-                                      <label>universityid</label>
-                                    <input placeholder="universityid" name="universityid" className="form-control" value={this.state.universityid} onChange={this.changeuniversityidHandler}/>
+                                      <label>universityId</label>
+                                    <input placeholder="universityId" name="universityId" className="form-control" value={this.state.universityId} onChange={this.changeuniversityIdHandler}/>
                                   </div>
                                   <div className="form-group">
                                       <label>name</label>
