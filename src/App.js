@@ -12,13 +12,13 @@ import getCollegeByCollegeRegId from './components/collegeModule/getCollegeByCol
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div  className="App">
     <switch>
     <Route exact path="/university/add" component={AddUniversity}/>
     <Route path= "/update-university/:universityId" component ={UpdateUniversity}/>
     <Route path= "/view-university/:universityId" component ={ViewUniversity}/>
     <Route path= "/add-university" component = {AddUniversity}/>
-    <Route exact path ="/university" component={University}/>
+    <Route exact path ="/university" component = {University}/>
     <Route exact path="/college/add" component={AddCollege}/>
     <Route path= "/add-college" component = {AddCollege}/>
     <Route path= "/update-college/:collegeRegId" component ={UpdateCollegeName}/>
