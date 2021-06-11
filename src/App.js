@@ -22,6 +22,17 @@ import Documentform from './components/Documentmodule/Documentform';
 import UpdateCollegeName from './components/collegeModule/updateCollege';
 import ViewUniversity from './components/universityModule/viewUniversity';
 import getCollegeByCollegeRegId from './components/collegeModule/getCollegeByCollegeRegId';
+import Application from './components/ApplicationModule/application';
+import ViewApplication from './components/ApplicationModule/viewApplication';
+import UpdateApplication from './components/ApplicationModule/updateApplication';
+import Payment from './components/PaymentModule/payment';
+import UpdatePayment from './components/PaymentModule/updatePayment';
+import ViewPayment from './components/PaymentModule/viewPayment';
+import PaymentMethod from "./components/PaymentModule/paymentPage";
+import ApplicationForm from "./components/ApplicationModule/applicationPage"
+import ApplicationDetails from "./components/ApplicationModule/applicationDetails"
+
+
 function App() {
   return (
     <Router>
@@ -50,6 +61,17 @@ function App() {
           <Route path="/add-address" component={createAddress}></Route>
           <Route path="/add-admission" component={CreateAdmission}></Route>
           <Route path="/documentform" component={Documentform}></Route>
+          <Route path="/applications" component={Application}></Route>
+           <Route path ="/view-applications/:applicationId" exact component ={ViewApplication}></Route>
+           <Route path="/update-applications/:applicationId" component = {UpdateApplication}></Route>   
+           <Route path="/payments" component={Payment}></Route>
+           <Route path ="/view-payments/:paymentId" exact component ={ViewPayment}></Route>
+           <Route path="/update-payments/:paymentId" component = {UpdatePayment}></Route>
+           <Route path="/makepayment" component={PaymentMethod}></Route>
+           <Route path="/applicationform" component={ApplicationForm}></Route>
+           <Route path="/a" component={ApplicationDetails}></Route>
+
+
         </switch>
       </div>
     </Router>
