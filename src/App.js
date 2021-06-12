@@ -37,7 +37,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <switch>
+        <Switch>
           <Route exact path="/university/add" component={AddUniversity} />
           <Route path="/update-university/:universityId" component={UpdateUniversity} />
           <Route path="/view-university/:universityId" component={ViewUniversity} />
@@ -72,7 +72,7 @@ function App() {
            <Route path="/a" component={ApplicationDetails}></Route>
 
 
-        </switch>
+        </Switch>
       </div>
     </Router>
   );
