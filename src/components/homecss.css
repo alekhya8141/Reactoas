@@ -1,0 +1,40 @@
+h2{font-weight: 300;
+    font-size: 2.615385em;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0 0 .5em;}
+    .col-md-4{
+    float: right;
+    margin-right:200px}
+
+    .digi{
+    height:"160";
+     width:"330"
+    }
+
+     .digidiv{
+     margin-left:40px;
+    }
+    .hero{
+        font-weight: 750;
+    font-family: "Neue Helvetica W05","Roboto Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 250%;
+    line-height: 1.3;}
+    .centered{
+        background-color: rgba(229, 235, 240, 0.842);
+        height: 300px;
+    }
+    .divmargin{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    #line {
+        font-size: 130%;
+        line-height: 1.4;
+    }
+    .imgdigi{
+        margin-left:40px;
+    }
+    #firstimg{
+        opacity: 1;
+    }

@@ -1,0 +1,41 @@
+.specs-section-head {
+    color: #fff !important;
+    background: #00448B;
+    padding-bottom: 0px;
+}
+.specs-section-content{
+    color: #fff !important;
+    background: #152b42;
+    padding-bottom: 0px;
+}
+.justify-content-between {
+    
+    justify-content: space-between!important;
+}
+.specs-section-content .spec::after {
+    position: absolute;
+    content: "";
+    top: auto;
+    bottom: 0px;
+    right: auto;
+    left: 15px;
+    width: 80%;
+    height: 0px;
+    border-top: 1px dashed #fff;
+    display: block !important;
+}
+.spec {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.specs-section-content .spec::after {
+   
+    border-right: 1px dashed #fff;
+}
+.row {   
+    display: flex;    
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
