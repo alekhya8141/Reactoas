@@ -1,0 +1,39 @@
+.navbar{
+    background-image: linear-gradient(20deg,rgb(66, 63, 63),rgba(8, 8, 8, 0.932)); 
+    text-decoration: black; 
+  }
+  .nav-item{
+    font-size:large;
+  }
+  .fa-home{
+    color: rgba(223, 143, 69, 0.911);
+  }
+  .collapse{
+    margin-left: 20px;
+  }
+  .logo {
+    color :rgb(197, 97, 197);
+    font-size: 25px;
+    height: 600;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: Cambria; 
+  }
+  .medtitle {
+    font-size: 2.5rem;
+  }
+  .login {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: space-between;
+    color:white;
+  }
+  .fa-graduation-cap{
+    color:  rgb(35, 182, 138);
+
+
+  }

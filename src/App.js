@@ -31,7 +31,35 @@ import ViewPayment from './components/PaymentModule/viewPayment';
 import PaymentMethod from "./components/PaymentModule/paymentPage";
 import ApplicationForm from "./components/ApplicationModule/applicationPage"
 import ApplicationDetails from "./components/ApplicationModule/applicationDetails"
-
+import ListCourseComponent from './components/course/ListCourseComponent';
+import CourseDetails from './components/course/CourseDetails';
+import UpdateCourseComponent from './components/course/UpdateCourseComponent';
+import ViewCourseComponent from './components/course/ViewCourseComponent';
+import ListBranchComponent from './components/branch/ListBranchComponent';
+import BranchDetails from './components/branch/BranchDetails';
+import UpdateBranchComponent from './components/branch/UpdateBranchComponent';
+import ViewBranchComponent from './components/branch/ViewBranchComponent';
+import AdminHome from './components/AdminHome';
+import ListAllUsers from './components/user/listAllUsers';
+import UpdateUser from './components/user/updateUser';
+import ViewUser from './components/user/viewUser';
+import Register from './components/SignUpComponent';
+import LoginComponent from './components/LoginComponent';
+import createUser from './components/user/createUser';
+import Program from './components/Programcomp/program';
+import ProgramSch from './components/pschComponents/programSch';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import ViewProgram from './components/Programcomp/viewProgram';
+import CreateProgram from './components/Programcomp/createProgram';
+import UpdateProgram from './components/Programcomp/updateProgram';
+import ViewProgramSch from './components/pschComponents/viewProgramSch';
+import CreateProgramSch from './components/pschComponents/createProgramSch';
+import UpdateProgramSch from './components/pschComponents/updateProgramSch';
+import Home from './components/home';
+import CollegePage from './components/collegePage';
+import CourseHome from './components/coursehome';
+import HomeLogout from './components/homeLogout';
+import UniversityPage from './components/universityPage';
 
 function App() {
   return (
@@ -62,17 +90,7 @@ function App() {
           <Route path="/add-admission" component={CreateAdmission}></Route>
           <Route path="/documentform" component={Documentform}></Route>
           <Route path="/applications" component={Application}></Route>
-           <Route path ="/view-applications/:applicationId" exact component ={ViewApplication}></Route>
-           <Route path="/update-applications/:applicationId" component = {UpdateApplication}></Route>   
-           <Route path="/payments" component={Payment}></Route>
-           <Route path ="/view-payments/:paymentId" exact component ={ViewPayment}></Route>
-           <Route path="/update-payments/:paymentId" component = {UpdatePayment}></Route>
-           <Route path="/makepayment" component={PaymentMethod}></Route>
-           <Route path="/applicationform" component={ApplicationForm}></Route>
-           <Route path="/a" component={ApplicationDetails}></Route>
-
-
-        </Switch>
+</Switch>
       </div>
     </Router>
   );
