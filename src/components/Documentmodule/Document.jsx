@@ -37,21 +37,24 @@ deleteDocumentById = (documentid) => {
   getDocumentId(documentid){
     this.props.history.push(`/get-documentid/${documentid}`);
   }
+  goback(){
+    this.props.history.push('/ahome');
+}
     render() {
         return (
           <div>
-            <h2 classname="text-center">document</h2>
+            <h2 classname="text-center">Document</h2>
             <div className="row">
             <button type="button" class="btn btn-sm btn-info" onClick={this.addDocument}>Add Document</button>
             <table className="table table-mt-6">
               <thead>
                 <tr>
-                  <th>documentid</th>
-                  <th>documentName</th>
-                  <th>documentUrl</th>
-                  <th>applicantid</th>
-                  <th>emailid</th>
-                  <th> documentStatus</th>
+                  <th>Documentid</th>
+                  <th>DocumentName</th>
+                  <th>DocumentUrl</th>
+                  <th>Applicantid</th>
+                  <th>Emailid</th>
+                  <th>DocumentStatus</th>
                   <th colSpan="2">Action</th>
                 </tr>
               </thead>
@@ -81,6 +84,7 @@ deleteDocumentById = (documentid) => {
                       }
                   </tbody>
                   </table>
+                  <button className="btn btn-info size-lg" onClick={this.goback.bind(this)}><i className="fa fa-arrow-left "></i></button>
                   </div>
                   </div>
                   

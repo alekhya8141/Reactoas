@@ -19,39 +19,35 @@ class getDocumentId extends Component {
     render() { 
         return ( 
             <div className="card col-md-6 offset-md-3">
-                <h3 className ="text-center"> getDocumentId</h3>
-                <div className="card bg-info text-dark">
+                <h3 className ="text-center">View Document</h3>
                 <div className ="card-body">
                 <h1>{this.props.match.params.documentid}</h1>
                     <div className ="row">
-                        <label><b>documentid: </b></label>
+                        <label><b>Documentid: </b></label>
                         <div>{this.state.document.documentid}</div>
                     </div>
                     <div className ="row">
-                        <label><b>documentName:</b> </label>
+                        <label><b>DocumentName:</b> </label>
                         <div>{this.state.document.documentName}</div>
                     </div>
                     <div className ="row">
-                        <label><b>documentUrl: </b></label>
+                        <label><b>DocumentUrl: </b></label>
                         <div>{this.state.document.documentUrl}</div>
                     </div>
                     <div className ="row">
-                        <label><b>applicantid: </b></label>
+                        <label><b>Applicantid: </b></label>
                         <div>{this.state.document.applicantid}</div>
                     </div>
                     <div className ="row">
-                        <label><b>emailid: </b></label>
+                        <label><b>Emailid: </b></label>
                         <div>{this.state.document.applicantid}</div>
                     </div>
                     <div className ="row">
-                        <label><b>documentStatus: </b></label>
+                        <label><b>DocumentStatus: </b></label>
                         <div>{this.state.document.documentStatus}</div>
-                    </div>
-                        
+                    </div>  
                 </div>
-
                 </div>
-            </div>
          )
     }
 }

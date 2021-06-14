@@ -1,6 +1,5 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import AddUniversity from './components/universityModule/addUniversity';
 import University from './components/universityModule/university';
 import UpdateUniversity from './components/universityModule/updateUniversity';
@@ -60,6 +59,8 @@ import CollegePage from './components/collegePage';
 import CourseHome from './components/coursehome';
 import HomeLogout from './components/homeLogout';
 import UniversityPage from './components/universityPage';
+import addressForm from './components/Addressmodule/addressForm';
+
 
 function App() {
   return (
@@ -90,6 +91,8 @@ function App() {
           <Route path="/add-admission" component={CreateAdmission}></Route>
           <Route path="/documentform" component={Documentform}></Route>
           <Route path="/applications" component={Application}></Route>
+
+=======
 </Switch>
       </div>
     </Router>

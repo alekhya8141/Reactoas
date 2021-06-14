@@ -1,4 +1,4 @@
-import { actionTypes } from "../../services/CollegeType";
+import { actionTypes } from "../../service/CollegeType";
 
 const INITIAL_STATE = {
   colleges: [],

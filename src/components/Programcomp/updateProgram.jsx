@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProgramService from "../../services/programService";
+import ProgramService from "../../service/programService";
 class UpdateProgram extends Component {
 
     constructor(props){

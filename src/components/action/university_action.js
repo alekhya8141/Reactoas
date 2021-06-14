@@ -1,4 +1,4 @@
-import { actionTypes } from "../../services/universityType";
+import { actionTypes } from "../../service/universityType";
 export const setUniversities = (universites) => {
   return {
     type: actionTypes.SET_UNIVERSITIES,
