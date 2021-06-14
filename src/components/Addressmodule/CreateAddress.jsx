@@ -65,33 +65,29 @@ render(){
                         <h3 className = "text-center">Add Address</h3>
                           <div className = "card-body">
                               <form>
-                              <div className="form-group">
-                                      <label>addressId</label>
-                                      <input placeholder="AddressId" name="addressId" className="form-control" value={this.state.addressID} onChange={this.changeaddressIdHandler}/>
+                                  <div className="form-group">
+                                      <label>City</label>
+                                      <input placeholder="City" name="city" className="form-control" value={this.state.city} onChange={this.changecityHandler}/>
                                   </div>
                                   <div className="form-group">
-                                      <label>city</label>
-                                      <input placeholder="city" name="city" className="form-control" value={this.state.city} onChange={this.changecityHandler}/>
+                                      <label>District</label>
+                                      <input placeholder="District" name="district" className="form-control" value={this.state.district} onChange={this.changedistrictHandler}/>
                                   </div>
                                   <div className="form-group">
-                                      <label>district</label>
-                                      <input placeholder="district" name="district" className="form-control" value={this.state.district} onChange={this.changedistrictHandler}/>
+                                      <label>State</label>
+                                      <input placeholder="State" name="state" className="form-control" value={this.state.state} onChange={this.changestateHandler}/>
                                   </div>
                                   <div className="form-group">
-                                      <label>state</label>
-                                      <input placeholder="state" name="state" className="form-control" value={this.state.state} onChange={this.changestateHandler}/>
+                                      <label>Country</label>
+                                      <input placeholder="Country" name="country" className="form-control" value={this.state.country} onChange={this.changecountryHandler}/>
                                   </div>
                                   <div className="form-group">
-                                      <label>country</label>
-                                      <input placeholder="country" name="country" className="form-control" value={this.state.country} onChange={this.changecountryHandler}/>
+                                      <label>Zipcode</label>
+                                      <input placeholder="Zipcode" name="zipcode" className="form-control" value={this.state.zipcode} onChange={this.changezipcodeHandler}/>
                                   </div>
                                   <div className="form-group">
-                                      <label>zipcode</label>
-                                      <input placeholder="zipcode" name="zipcode" className="form-control" value={this.state.zipcode} onChange={this.changezipcodeHandler}/>
-                                  </div>
-                                  <div className="form-group">
-                                      <label>landmark</label>
-                                      <input placeholder="landmark" name="landmark" className="form-control" value={this.state.landmark} onChange={this.changelandmarkHandler}/>
+                                      <label>Landmark</label>
+                                      <input placeholder="Landmark" name="landmark" className="form-control" value={this.state.landmark} onChange={this.changelandmarkHandler}/>
                                   </div>
                                   <button className="btn btn-success" onClick={this.saveAddress}>Save</button>
                                   <button className="btn btn-danger"  onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}}>Cancel</button>

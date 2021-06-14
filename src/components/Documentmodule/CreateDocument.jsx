@@ -60,29 +60,25 @@ render(){
                         <h3 className = "text-center">Add Document</h3>
                           <div className = "card-body">
                               <form>
-                              <div className="form-group">
-                                      <label>documentid</label>
-                                      <input placeholder="documentid" name="documentid" className="form-control" value={this.state.documentid} onChange={this.changedocumentidHandler}/>
+                                  <div className="form-group">
+                                      <label>DocumentName</label>
+                                      <input placeholder="DocumentName" name="documentName" className="form-control" value={this.state.documentName} onChange={this.changedocumentNameHandler}/>
                                   </div>
                                   <div className="form-group">
-                                      <label>documentName</label>
-                                      <input placeholder="documentName" name="documentName" className="form-control" value={this.state.documentName} onChange={this.changedocumentNameHandler}/>
+                                      <label>DocumentUrl</label>
+                                      <input placeholder="DocumentUrl" name="documentUrl" className="form-control" value={this.state.documentUrl} onChange={this.changedocumentUrlHandler}/>
                                   </div>
                                   <div className="form-group">
-                                      <label>documentUrl</label>
-                                      <input placeholder="documentUrl" name="documentUrl" className="form-control" value={this.state.documentUrl} onChange={this.changedocumentUrlHandler}/>
+                                      <label>Applicantid</label>
+                                      <input placeholder="Applicantid" name="applicantid" className="form-control" value={this.state.applicantid} onChange={this.changeapplicantidHandler}/>
                                   </div>
                                   <div className="form-group">
-                                      <label>applicantid</label>
-                                      <input placeholder="applicantid" name="applicantid" className="form-control" value={this.state.applicantid} onChange={this.changeapplicantidHandler}/>
+                                      <label>EmailId</label>
+                                      <input placeholder="EmailId" name="emailid" className="form-control" value={this.state.emailid} onChange={this.changeemailidHandler}/>
                                   </div>
                                   <div className="form-group">
-                                      <label>emailid</label>
-                                      <input placeholder="emailid" name="emailid" className="form-control" value={this.state.emailid} onChange={this.changeemailidHandler}/>
-                                  </div>
-                                  <div className="form-group">
-                                      <label>documentStatus</label>
-                                      <input placeholder="documentStatus" name="documentStatus" className="form-control" value={this.state.documentStatus} onChange={this.changedocumentStatusHandler}/>
+                                      <label>DocumentStatus</label>
+                                      <input placeholder="DocumentStatus" name="documentStatus" className="form-control" value={this.state.documentStatus} onChange={this.changedocumentStatusHandler}/>
                                   </div>
                                   <button className="btn btn-success" onClick={this.saveDocument}>Save</button>
                                   <button className="btn btn-danger"  onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}}>Cancel</button>

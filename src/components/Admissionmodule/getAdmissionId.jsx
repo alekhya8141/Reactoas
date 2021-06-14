@@ -19,31 +19,27 @@ class getAdmissionId extends Component {
     render() { 
         return ( 
             <div className="card col-md-6 offset-md-3">
-                <h3 className ="text-center"> getAdmissionId</h3>
-                <div className="card bg-info text-dark">
+                <h3 className ="text-center">View Admission</h3>
                 <div className ="card-body">
                 <h1>{this.props.match.params.admissionId}</h1>
                     <div className ="row">
-                        <label><b>admissionId: </b></label>
+                        <label><b>AdmissionId: </b></label>
                         <div>{this.state.admission.admissionId}</div>
                     </div>
                     <div className ="row">
-                        <label><b>emailId:</b> </label>
+                        <label><b>EmailId:</b> </label>
                         <div>{this.state.admission.emailId}</div>
                     </div>
                     <div className ="row">
-                        <label><b>admissionStatus: </b></label>
+                        <label><b>AdmissionStatus: </b></label>
                         <div>{this.state.admission.admissionStatus}</div>
                     </div>
                     <div className ="row">
-                        <label><b>year: </b></label>
+                        <label><b>Year: </b></label>
                         <div>{this.state.admission.year}</div>
-                    </div>
-                        
+                    </div>  
                 </div>
-
                 </div>
-            </div>
          )
     }
 }

@@ -1,6 +1,5 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import AddUniversity from './components/universityModule/addUniversity';
 import University from './components/universityModule/university';
 import UpdateUniversity from './components/universityModule/updateUniversity';
@@ -60,6 +59,8 @@ import CollegePage from './components/collegePage';
 import CourseHome from './components/coursehome';
 import HomeLogout from './components/homeLogout';
 import UniversityPage from './components/universityPage';
+import addressForm from './components/Addressmodule/addressForm';
+
 
 function App() {
   return (
@@ -97,6 +98,7 @@ function App() {
           <Route path="/update-payments/:paymentId" component={UpdatePayment}></Route>
           <Route path="/makepayment" component={PaymentMethod}></Route>
           <Route path="/applicationform" component={ApplicationForm}></Route>
+          <Route path="/addressform" component={addressForm}></Route>
           <Route path="/a" component={ApplicationDetails}></Route>
           <Route path="/sign-up/_add" exact component={Register}></Route>
           <Route path="/login" exact component={LoginComponent}></Route>
@@ -113,8 +115,8 @@ function App() {
           <Route path="/update-user/:userid" exact component={UpdateUser}></Route>
           <Route path="/view-user/:userid" exact component={ViewUser}></Route>
           <Route path="/create-user" exact component={createUser}></Route>
-          <Route path="/" exact component={Program}></Route>
-          <Route path="/home" component={Home}></Route>
+          <Route path="/program" exact component={Program}></Route>
+          <Route path="/"exact component={Home}></Route>
           <Route path="/homelogout" component={HomeLogout}></Route>
           <Route path="/Programs" component={Program}></Route>
           <Route path="/view-programs/:programId" component={ViewProgram}></Route>
@@ -127,6 +129,7 @@ function App() {
           <Route path="/collegepage" component={CollegePage}></Route>
           <Route path="/universitypage" component={UniversityPage}></Route>
           <Route path="/coursehome" component={CourseHome}></Route>
+        
         </switch>
       </div>
     </Router>
