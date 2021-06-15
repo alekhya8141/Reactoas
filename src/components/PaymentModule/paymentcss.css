@@ -54,7 +54,6 @@
     border: 2px solid grey;
 }
 #image{
-  background-image: url("C:\Users\Sherein\git\Reactoas\src\images\girl.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;  

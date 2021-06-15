@@ -1,11 +1,13 @@
-h2{font-weight: 300;
+.pop,.news,.exp{font-weight: 300;
     font-size: 2.615385em;
     line-height: 1.2;
     margin: 0;
+    text-align: left;
     padding: 0 0 .5em;}
     .col-md-4{
     float: right;
     margin-right:200px}
+
 
     .digi{
     height:"160";
@@ -31,10 +33,14 @@ h2{font-weight: 300;
     #line {
         font-size: 130%;
         line-height: 1.4;
+        text-align:left;
     }
     .imgdigi{
         margin-left:40px;
     }
     #firstimg{
         opacity: 1;
+    }
+    p{
+        text-align:left;
     }
