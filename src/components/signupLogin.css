@@ -7,18 +7,16 @@
 */
 #hellooo{
   padding:0px 50px 0px 50px;
-  background-image: url("C:\Users\madhu\Downloads\HElllooo\oas\src\images\girl.jpg");
-  opacity: 0.8;
+  background-image: url("C:\Users\madhu\git\Reactoas\src\images\girl.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;  
   background-size: cover;
  }
  #helloo{
-  background-image: url("C:\Users\madhu\Downloads\HElllooo\oas\src\images\girl.jpg");
-  opacity: 0.8;
+  background-image: url("C:\Users\madhu\git\Reactoas\src\images\girl.jpg");
+  height: 720px;
   background-repeat: no-repeat;
-  background-position: center;
   background-attachment: fixed;  
   background-size: cover;
  }
@@ -41,14 +39,17 @@
    font-weight: 500;
    color:orangered;
  }
-  .row{
+  #row{
     padding:50px;
   }
   .border-md {
     border-width: 1px;
     border-color: black;
   }
-  
+  #userid,#password,#sp{
+    border-width: 3px;
+    border-color: black;
+  }
   .btn-facebook {
     background: #0c3896;
     border: none;
@@ -153,7 +154,7 @@
   }
   .form-control:focus {
     box-shadow: none;
-    border-color: red;
+    border-color:black;
   }
   
   /* 

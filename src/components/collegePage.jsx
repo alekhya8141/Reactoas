@@ -1,7 +1,6 @@
 import React from "react";
 import { Card, Row, Col, Container } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 import { setColleges } from "./action/college_action";
 import HeaderComponent from "./Header";
 import Footer from "./Footer";

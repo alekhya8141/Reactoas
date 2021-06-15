@@ -10,13 +10,13 @@ class CourseService {
       return await axios.post(COURSE_API_BASE_URL, course);
     }
     async getCourseById(courseId){
-      return await axios.get(COURSE_API_BASE_URL + '/id' + '/' + courseId);
+      return await axios.get(COURSE_API_BASE_URL + '/id/' +  courseId);
     }
     async updateCourse(courseId,course){
       return axios.put(COURSE_API_BASE_URL+ '/' +courseId, course);
     }
     async deleteCourse(courseId){
-      return axios.delete(COURSE_API_BASE_URL + '/did' + '/' +courseId);
+      return axios.delete(COURSE_API_BASE_URL + '/did/' + courseId);
     }
   } 
 export default new CourseService()
