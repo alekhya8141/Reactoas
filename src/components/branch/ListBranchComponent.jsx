@@ -41,7 +41,7 @@ render(){
         <div className="container">
             <br></br>
            <h2 className="text-center">BRANCHES LIST</h2>
-              <i style={{color:"green"}} class="fa fa-plus size-lg" onClick={this.addBranch}>{" "}Add Branch</i>
+            <button><i style={{color:"blue"}} class="fa fa-plus size-lg" onClick={this.addBranch}>{" "}Add Branch</i></button>
                  <table className="table mt-2">
                     <thead className="table-light">
                         <tr>

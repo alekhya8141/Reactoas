@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./signupLogin.css";
 import {LockFill } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
+import HeaderComponent from "./Header";
 
 // import {} from
 
@@ -32,13 +33,15 @@ class LoginComponent extends Component {
            this.props.history.push(`/ahome`);
             }
             else {
-                this.props.history.push(`/`);
+                this.props.history.push(`/homelogout`);
             }
         });
   };
 
   render() {
     return (
+      <div>
+      <HeaderComponent/>
       <div id="helloo">
         {/* <header className="header">
           <nav className="navbar navbar-expand-lg navbar-light py-3">
@@ -61,10 +64,10 @@ class LoginComponent extends Component {
             </div>
             <div className="col-md-7 col-lg-6 ml-auto">
               <form action="#">
-                <div className="row">
+                <div id="row">
                   <div className="input-group col-lg-12 mb-4">
                     <div className="input-group-prepend">
-                      <span className="input-group-text bg-white px-4 border-md border-right-0">
+                      <span id="sp" className="input-group-text bg-white px-4 border-md border-right-0">
                         <i className="fa fa-user"></i> 
                       </span>
                     </div>
@@ -74,7 +77,7 @@ class LoginComponent extends Component {
                       name="userid"
                       placeholder="UserId"
                       className="form-control bg-white border-left-0 border-md"
-                      value={this.state.iserid}
+                      value={this.state.userid}
                       onChange={this.changeUserIdHandler}
                       required
                     />
@@ -82,9 +85,8 @@ class LoginComponent extends Component {
 
                   <div className="input-group col-lg-12 mb-4">
                     <div className="input-group-prepend">
-                      <span className="input-group-text bg-white px-4 border-md border-right-0">
+                      <span id="sp" className="input-group-text bg-white px-4 border-md border-right-0">
                         <i className="fa fa-lock">
-                          <LockFill />
                         </i>
                       </span>
                     </div>
@@ -116,6 +118,7 @@ class LoginComponent extends Component {
             </div>
           </div>
         </div>
+    </div>
     </div>
     );
   }

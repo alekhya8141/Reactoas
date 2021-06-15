@@ -39,7 +39,7 @@ class ListCourseComponent extends Component{
             <div className = "container-md">
               <br></br>
                <h2 className="text-center">COURSES LIST</h2>
-               <i style={{color:"green"}} class="fa fa-plus size-lg" onClick={this.addCourse}>{" "}Add Course</i>
+               <button><i style={{color:"blue"}} class="fa fa-plus size-lg" onClick={this.addCourse}>{" "}Add Course</i></button>
                      <table className="table mt-3">
                         <thead className="table-light">
                             <tr>

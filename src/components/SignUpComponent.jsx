@@ -91,8 +91,8 @@ render(){
                   className="vert-move"/>
                   {/* <span id="reg">&reg;</span> 
                 </a>></div>*/}
-              <div className="row">
               <h2 className="text-center"><b>REGISTER</b></h2>
+              <div>
               <div className="input-group col-lg-12 mb-1">
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white px-4 border-md border-right-0">
@@ -111,7 +111,7 @@ render(){
                     onChange={this.changeUserIdHandler}
                   />
                 </div>
-                <div className="input-group col-lg-6 mb-1">
+                <div className="input-group col-lg-12 mb-1">
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white px-4 border-md border-right-0">
                       <PersonCircle />
@@ -126,20 +126,22 @@ render(){
                     value={this.state.firstname}
                     onChange={this.changeFirstNameHandler}
                   />
-                  <div className="input-group-prepend">
-                    <span className="input-group-text bg-white px-4 border-md border-right-0 ml-2">
-                      <PersonCircle />
-                    </span>
-                  </div>
-                  <input
-                    id="lastName"
-                    type="text"
-                    name="lastname"
-                    placeholder="Last Name"
-                    className="form-control bg-white border-left-0 border-md"
-                    value={this.state.lastname}
-                    onChange={this.changeLastNameHandler}
-                  />
+                    <div className="input-group-prepend">
+                      <span className="input-group-text bg-white px-4 border-md border-right-0 ml-2">
+                        {/* <i className="fa fa-user text-muted"> */}
+                        <PersonCircle />
+                        {/* </i> */}
+                      </span>
+                    </div>
+                    <input
+                      id="lastName"
+                      type="text"
+                      name="lastname"
+                      placeholder="Last Name"
+                      className="form-control bg-white border-left-0 border-md"
+                      value={this.state.lastname}
+                      onChange={this.changeLastNameHandler}
+                    />
                 </div>
                 <div className="input-group col-lg-12 mb-1">
                   <div className="input-group-prepend">
@@ -192,23 +194,24 @@ render(){
                     onChange={this.changeaadharnumberHandler}
                   />
                 </div>
-                <div className="input-group col-lg-6 mb-2">
-                  <div className="input-group-prepend">
-                    <span className="input-group-text bg-white px-4 border-md border-right-0">
-                      <LockFill />
-                    </span>
+                <div className="input-group col-lg-12 mb-4">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text bg-white px-4 border-md border-right-0">
+                        {/* <i className="fa fa-lock text-muted"> */}
+                        <LockFill />
+                        {/* </i> */}
+                      </span>
+                    </div>
+                    <input
+                      id="Password"
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      className="form-control bg-white border-left-0 border-md"
+                      value={this.state.password}
+                      onChange={this.changePasswordHandler}
+                    />
                   </div>
-                  <input
-                    id="password"
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    className="form-control bg-white border-left-0 border-md"
-                    value={this.state.password}
-                    onChange={this.changePasswordHandler}
-                  />
-                </div>
-              
                 <div className="form-group col-lg-12 mx-auto mb-0">
                   <button
                     // href="#"
@@ -226,7 +229,7 @@ render(){
               
                 <div className="form-group col-lg-12 mx-auto d-flex align-items-center my-1">
                   <div className="border-bottom w-100 ml-1 or"></div>
-                  <span className="px-2 small text-muted font-weight-bold text-muted">
+                  <span className="px-2 verylarge font-weight-bold ">
                     OR
                   </span>
                   <div className="border-bottom w-100 mr-5 or"></div>

@@ -1,17 +1,23 @@
-
-import React, { Component } from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 import {
-  PersonCircle,
   Search,
 } from "react-bootstrap-icons";
 import "./headerCss.css";
-class HeaderLogout extends Component {
-  constructor(props) {
+import UserService from "../service/UserService";
+class HeaderLogout extends React.Component {
+  constructor(props){
     super(props)
-    this.state = {
 
+    this.state={
+        users:[],
+        userid:localStorage.getItem('userid')
     }
+    this.logout=this.logout.bind(this);
+  }
+  logout(){
+    console.log('logout=>'+this.state.userid)
+    UserService.logout(this.state.userid)
   }
   render() {
     return (
@@ -50,7 +56,8 @@ class HeaderLogout extends Component {
                   </div>
                 </div>
               </form>
-              <a a class="nav-link login" href="http://localhost:3000/home"> <i class="fas fa-sign-out-alt"></i>&nbsp; LOGOUT </a>
+              <a href="http://localhost:3000/">
+              <button class="btn btn-lg btn-info" role="button" onClick={this.logout}>LOGOUT &raquo;</button></a>
             </div>
           </nav>
         </header>

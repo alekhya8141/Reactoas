@@ -13,7 +13,7 @@ class UserService{
     return await axios.post(USER_API_BASE_URL+"/users/add",user);
     }
     async updateUser(user,userid){
-        return await axios.put(USER_API_BASE_URL+"/users"+"/update/"+userid,user);
+
     }
     async viewUser(userid){
         return await axios.get(USER_API_BASE_URL+"/users/"+userid);

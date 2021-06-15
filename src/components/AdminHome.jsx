@@ -23,7 +23,7 @@ class AdminHome extends React.Component {
       <div>
         <div class="sidebar-container sid">
             <h4 className="text-center">OnlineAdmissionSystem</h4><br></br>
-            <h3 className="text-center"><b>MODULES</b></h3>
+            <h5 className="text-center"><b>MODULES</b></h5>
           <ul class="sidebar-navigation">
             <li>
               <Link to="/users">

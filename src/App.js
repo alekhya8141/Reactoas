@@ -1,8 +1,10 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AddUniversity from './components/universityModule/addUniversity';
 import University from './components/universityModule/university';
 import UpdateUniversity from './components/universityModule/updateUniversity';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import AddUniversity from './components/universityModule/addUniversity';
 import AddCollege from './components/collegeModule/addCollege';
 import College from './components/collegeModule/college';
 import Address from './components/Addressmodule/Address';
@@ -66,8 +68,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <switch>
-          <Route exact path="/university/add" component={AddUniversity} />
           <Route path="/update-university/:universityId" component={UpdateUniversity} />
           <Route path="/view-university/:universityId" component={ViewUniversity} />
           <Route path="/add-university" component={AddUniversity} />
@@ -91,10 +91,3 @@ function App() {
           <Route path="/add-admission" component={CreateAdmission}></Route>
           <Route path="/documentform" component={Documentform}></Route>
           <Route path="/applications" component={Application}></Route>
-
-      </div>
-    </Router>
-  );
-}
-
-export default App;
