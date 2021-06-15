@@ -30,6 +30,7 @@ import Payment from './components/PaymentModule/payment';
 import UpdatePayment from './components/PaymentModule/updatePayment';
 import ViewPayment from './components/PaymentModule/viewPayment';
 import PaymentMethod from "./components/PaymentModule/paymentPage";
+
 import ApplicationForm from "./components/ApplicationModule/applicationForm"
 import ListCourseComponent from './components/course/ListCourseComponent';
 import CourseDetails from './components/course/CourseDetails';
@@ -60,18 +61,13 @@ import CollegePage from './components/collegePage';
 import CourseHome from './components/coursehome';
 import HomeLogout from './components/homeLogout';
 import UniversityPage from './components/universityPage';
-import ProgramHome from './components/programPage';
-import BranchHome from './components/branchPage';
-import addressForm from './components/Addressmodule/addressForm';
-import PaymentForm from './components/PaymentModule/paymentForm';
 
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
-        <Route exact path="/addressform" component={addressForm} />
+
       <Route exact path="/paymentform" component={PaymentForm} />
       <Route exact path="/university/add" component={AddUniversity} />
           <Route path="/update-university/:universityId" component={UpdateUniversity} />
@@ -132,11 +128,3 @@ function App() {
           <Route path="/collegepage" component={CollegePage}></Route>
           <Route path="/universitypage" component={UniversityPage}></Route>
           <Route path="/coursehome" component={CourseHome}></Route>
-          <Route path="/programpage" component={ProgramHome}></Route>
-          <Route path="/branchpage" component={BranchHome}></Route>
-        </Switch>
-      </div>
-    </Router>
-  );
-}
-export default App;

@@ -6,6 +6,7 @@
 *
 */
 #hellooo{
+  background-image: url("C:\Users\umabh\git\Reactoas\src\images\girl.jpg");
   padding:0px 50px 0px 50px;
   background-image: url("C:\Users\Admin\git\Reactoas\src\images\main.jpg");
   background-repeat: no-repeat;
@@ -14,7 +15,7 @@
   background-size: cover;
  }
  #helloo{
-  background-image: url("C:\Users\Admin\git\Reactoas\src\images\main.jpg");
+
   background-repeat: no-repeat;
   background-attachment: fixed;  
   background-size: cover;
