@@ -38,4 +38,10 @@
     margin-right: -15px;
     margin-left: -15px;
 }
+em{
+    font-Weight:bold;
+}
+span{
+    text-align: left;
+}
 

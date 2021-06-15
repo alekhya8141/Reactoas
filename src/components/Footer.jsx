@@ -33,7 +33,7 @@ export default class Footer extends Component {
                 </p>
               </div>
 
-              <div class=" col-sm-4 col-md  col-6 col">
+              <div class="col-sm-4 col-md  col-6 col">
                 <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
                 {/* <!--headin5_amrc--> */}
                 <ul class="footer_ul_amrc">

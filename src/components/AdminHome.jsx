@@ -31,12 +31,12 @@ class AdminHome extends React.Component {
               </Link>
             </li>
             <li>
-              <Link to="/application">
+              <Link to="/applications">
                    Application
               </Link>
             </li>
             <li>
-              <Link to="/payment">
+              <Link to="/payments">
                    Payment
               </Link>
             </li>
@@ -61,12 +61,12 @@ class AdminHome extends React.Component {
               </Link>
             </li>
             <li>
-              <Link to="/program">
+              <Link to="/programs">
                    Program
               </Link>
             </li>
             <li>
-              <Link to="/programSchedule">
+              <Link to="/programscheduled">
                    ProgramSchedule
               </Link>
             </li>
@@ -87,7 +87,6 @@ class AdminHome extends React.Component {
             </li>
           </ul>
         </div>
-
         <div class="content-container">
           <div class="container-fluid">
             <div class="jumbotron jj">
@@ -108,5 +107,4 @@ class AdminHome extends React.Component {
     );
   }
 }
-
 export default AdminHome;

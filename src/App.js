@@ -1,6 +1,5 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import AddUniversity from './components/universityModule/addUniversity';
 import University from './components/universityModule/university';
 import UpdateUniversity from './components/universityModule/updateUniversity';
@@ -60,6 +59,10 @@ import CollegePage from './components/collegePage';
 import CourseHome from './components/coursehome';
 import HomeLogout from './components/homeLogout';
 import UniversityPage from './components/universityPage';
+import ProgramHome from './components/programPage';
+import BranchHome from './components/branchPage';
+import AdmissionSer from './components/ApplicationModule/applicationUser';
+
 
 function App() {
   return (
@@ -113,7 +116,7 @@ function App() {
           <Route path="/update-user/:userid" exact component={UpdateUser}></Route>
           <Route path="/view-user/:userid" exact component={ViewUser}></Route>
           <Route path="/create-user" exact component={createUser}></Route>
-          <Route path="/" exact component={Program}></Route>
+          <Route path="/" exact component={Home}></Route>
           <Route path="/home" component={Home}></Route>
           <Route path="/homelogout" component={HomeLogout}></Route>
           <Route path="/Programs" component={Program}></Route>
@@ -127,6 +130,9 @@ function App() {
           <Route path="/collegepage" component={CollegePage}></Route>
           <Route path="/universitypage" component={UniversityPage}></Route>
           <Route path="/coursehome" component={CourseHome}></Route>
+          <Route path="/programhome" component={ProgramHome}></Route>
+          <Route path="/branchhome" component={BranchHome}></Route>
+          <Route path="/apph" component={AdmissionSer}></Route>
         </switch>
       </div>
     </Router>

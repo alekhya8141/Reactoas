@@ -1,11 +1,10 @@
 import axios from "axios";
 
-const APPLICATION_API_BASE_URL = "http://localhost:8082/application";
+const APPLICATION_API_BASE_URL = "http://localhost:8081/application";
 
 class ApplicationService {
 
   async getAllApplication() {
-    //return await axios.get(Application_API_BASE_URL + "/all");
     return await axios.get(APPLICATION_API_BASE_URL);
   }
   async createApplication(application){

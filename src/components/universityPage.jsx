@@ -48,12 +48,15 @@ function UniversityPage() {
                 <Card>
                   <Card.Body>
                     <Card.Title>{uni.name}</Card.Title>
+                    <span><em>{uni.name}</em> is one of the top ranking universities in India, offering a wide range of undergraduate, postgraduate and doctoral programs in Engineering,&nbsp;...</span>
+                   
                   </Card.Body>
                 </Card>
               </Col>
             ))}
         </Row>
       </Container>
+      
       <Footer />
     </div>
   );

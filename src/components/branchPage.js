@@ -1,8 +1,7 @@
 import React from "react";
-import { Card, Row, Col, Container } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { setCourses } from "./action/course_action";
+import { setBranches } from "./action/branch_action";
 import HeaderComponent from "./Header";
 import Footer from "./Footer";
 import "./coursepage.css"
@@ -10,20 +9,20 @@ const { useEffect } = React;
 
 const axios = require("axios");
 
-function CourseHome() {
-  const courses = useSelector((state) => state.course.courses);
+function BranchHome() {
+  const branches = useSelector((state) => state.branch.branches);
   const dispatch = useDispatch();
 
-  const getCourseList = async () => {
-    const { data } = await axios.get("http://localhost:8081/api/course");
+  const getBranchList = async () => {
+    const { data } = await axios.get("http://localhost:8081/api/branch");
     console.log(data);
-    dispatch(setCourses(data));
+    dispatch(setBranches(data));
   };
 
   useEffect(() => {
-    getCourseList();
+    getBranchList();
   }, []);
-  console.log(courses);
+  console.log(branches);
 
   return (
     <div>
@@ -34,28 +33,23 @@ function CourseHome() {
             <div class="col-12">
               <h2 class="heading">
                 <strong>
-                  Courses offered
+                  Branch offered
                 </strong>
               </h2>
             </div>
           </div>
         </div>
       </section>
-      <div> {courses.length &&
-        courses.map((cor) => (
+      <div> {branches.length &&
+        branches.map((br) => (
           <section class="specs-section-content">
             <div class="container">
               <div class="row justify-content-between">
                 <div class="col-lg-auto col-6 spec">
-                  <div key={cor.courseId}>
+                  <div key={br.branchId}>
                     <p>
-                    <ul class="fa-ul">
-  <li><span class="fa-li"><i class="fas fa-circle"></i></span>{cor.courseName}</li>
-  
-                      <span>{cor.description}</span><br />
-                      <span>Eligibility:{cor.eligibility}</span><br />
-  </ul>
-                      
+                      <span>{br.branchName}</span><br />
+                      <span>{br.branchDescription}</span><br />
                     </p>
                   </div>
                 </div>
@@ -68,4 +62,4 @@ function CourseHome() {
     </div>
   );
 }
-export default CourseHome;
+export default BranchHome;

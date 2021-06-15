@@ -1,4 +1,4 @@
-import { actionTypes } from "../../services/courseType";
+import { actionTypes } from "../../service/courseType";
 export const setCourses = (courses) => {
   return {
     type: actionTypes.SET_COURSES,

@@ -13,14 +13,15 @@
   }
   .logo {
     color :rgb(197, 97, 197);
-    font-size: 25px;
+    font-size: 50px;
     height: 600;
     font-weight: 600;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
-    font-family: Cambria; 
+    font-family: algerian; 
+    text-shadow: 3px 3px 3px #f00f0f;
   }
   .medtitle {
     font-size: 2.5rem;

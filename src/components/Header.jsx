@@ -18,7 +18,7 @@ class HeaderComponent extends Component {
       <div>
         <header>
           <nav class="navbar navbar-expand-lg navbar-dark ">
-            <a class="logo navbar-brand" href="#"><i class="fas fa-graduation-cap fa-lg"></i>AmBus</a>
+            <a class="logo navbar-brand" href="#">AmBus</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,7 +50,7 @@ class HeaderComponent extends Component {
                   </div>
                 </div>
               </form>
-              <a a class="nav-link login" href="#"> <PersonCircle />&nbsp; LOGIN </a>
+              <a a class="nav-link login" href="http://localhost:3000/login"> <PersonCircle />&nbsp; LOGIN </a>
             </div>
           </nav>
         </header>

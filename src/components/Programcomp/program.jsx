@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import ProgramService from "../../services/programService";
+import ProgramService from "../../service/programService";
 
 class Program extends Component {
     constructor(props) {
@@ -43,12 +43,11 @@ class Program extends Component {
 
     render() {
         return (
-            <div>
-                <h3 className="text-center">Program List</h3>
-                <div className="row">
-                    <button style={{ marginBottom: "10px", marginLeft: "140px", cursor: "pointer" }} className="btn btn-info" onClick={this.addProgram}>Add Program</button>
-                </div>
-                <div className="row">
+            <div container-md>
+                <br/>
+                <br/>
+                <h2 className="text-center">Program List</h2>          
+                    <button style={{ marginBottom: "10px", marginRight: "1130px", cursor: "pointer" }} className="btn btn-info" onClick={this.addProgram}>Add Program</button>
                     <table className="table table-sm table-hover table-bordered bg-light" style={{ marginLeft: "140px", width: "80%" }}>
                         <thead className="thead-dark">
                             <tr>
@@ -84,8 +83,7 @@ class Program extends Component {
                             }
                         </tbody>
                     </table>
-                </div>
-                <button className="btn btn-info size-lg" style={{ marginLeft: "125px" }} onClick={this.goback.bind(this)}><i className="fa fa-arrow-left "></i></button>
+                <button className="btn btn-info size-lg float-left" style={{ marginRight: "1150px" }} onClick={this.goback.bind(this)}><i className="fa fa-arrow-left "></i></button>
             </div>
         )
     }
