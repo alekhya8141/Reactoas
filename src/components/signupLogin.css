@@ -8,15 +8,14 @@
 #hellooo{
   background-image: url("C:\Users\umabh\git\Reactoas\src\images\girl.jpg");
   padding:0px 50px 0px 50px;
-
+  background-image: url("C:\Users\Admin\git\Reactoas\src\images\main.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;  
   background-size: cover;
  }
  #helloo{
-  background-image: url("C:\Users\umabh\git\Reactoas\src\images\girl.jpg");
-  height: 720px;
+
   background-repeat: no-repeat;
   background-attachment: fixed;  
   background-size: cover;
@@ -25,7 +24,7 @@
    font-family: 'Helvetica';
    font-style: italic;
    font-weight: 600;
-   color:white;
+   color:brown;
 
  }
  #heyyy{
@@ -157,23 +156,6 @@
     box-shadow: none;
     border-color:black;
   }
-  
-  /* 
-  #firstName
-  {
-    text-align: center;
-    border: 2px solid red;
-  } */
-  
-  /* .fa
-  {
-    color: red;
-  } */
-  
-  /* input
-  {
-    border-color: red;
-  } */
   
   .la {
     margin-top: 20px;

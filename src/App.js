@@ -30,7 +30,7 @@ import Payment from './components/PaymentModule/payment';
 import UpdatePayment from './components/PaymentModule/updatePayment';
 import ViewPayment from './components/PaymentModule/viewPayment';
 import PaymentMethod from "./components/PaymentModule/paymentPage";
-import PaymentForm from "./components/PaymentModule/paymentForm";
+
 import ApplicationForm from "./components/ApplicationModule/applicationForm"
 import ListCourseComponent from './components/course/ListCourseComponent';
 import CourseDetails from './components/course/CourseDetails';
@@ -61,16 +61,13 @@ import CollegePage from './components/collegePage';
 import CourseHome from './components/coursehome';
 import HomeLogout from './components/homeLogout';
 import UniversityPage from './components/universityPage';
-import addressform from './components/Addressmodule/addressForm';
-
 
 
 function App() {
   return (
     <Router>
       <div className="App">
-      <Switch>
-      <Route exact path="/addressform" component={addressform} />
+
       <Route exact path="/paymentform" component={PaymentForm} />
       <Route exact path="/university/add" component={AddUniversity} />
           <Route path="/update-university/:universityId" component={UpdateUniversity} />
@@ -118,7 +115,6 @@ function App() {
           <Route path="/update-user/:userid" exact component={UpdateUser}></Route>
           <Route path="/view-user/:userid" exact component={ViewUser}></Route>
           <Route path="/create-user" exact component={createUser}></Route>
-          <Route path="/program" exact component={Program}></Route>
           <Route path="/" exact component={Home}></Route>
           <Route path="/homelogout" component={HomeLogout}></Route>
           <Route path="/Programs" component={Program}></Route>
@@ -132,9 +128,3 @@ function App() {
           <Route path="/collegepage" component={CollegePage}></Route>
           <Route path="/universitypage" component={UniversityPage}></Route>
           <Route path="/coursehome" component={CourseHome}></Route>
-          </Switch>
-      </div>
-      </Router>
-  );
-}
-export default App;

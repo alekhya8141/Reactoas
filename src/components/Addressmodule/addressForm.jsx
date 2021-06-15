@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import AddressService from '../../service/AddressService';
+import HeaderLogout from "../headerLogout";
+import Footer from "../Footer";
+import "../homeform.css"
 
 class addressForm extends Component {
 
@@ -67,36 +70,37 @@ class addressForm extends Component {
 
     render() { 
         return (  
-            <div>
-                <div className="container">
+            <div class="homeform">
+                <HeaderLogout/>
+                <div className="container" style={{marginBottom:"50px", marginTop:"50px"}}>
                     <div className="row">
-                        <div className="caed col-md-6 offset-md-3 offset-md-3">
+                        <div className="card col-md-6 offset-md-3 offset-md-3">
                             <h3 className="text-center"> Address Form</h3>
                             <div className="card-body">
                                 <form>
                                     <h1>{this.props.match.params.addressId}</h1>
-                                  <div className="form-group">
-                                      <label>city</label>
+                                  <div className="form-group text-left">
+                                      <label>City:</label>
                                       <input placeholder="city" name="city" className="form-control" value={this.state.city} onChange={this.changecityHandler}/>
                                   </div>
-                                  <div className="form-group">
-                                      <label>District</label>
+                                  <div className="form-group text-left">
+                                      <label>District:</label>
                                       <input placeholder="District" name="district" className="form-control" value={this.state.district} onChange={this.changedistrictHandler}/>
                                   </div>
-                                  <div className="form-group">
-                                      <label>State</label>
+                                  <div className="form-group text-left">
+                                      <label>State:</label>
                                       <input placeholder="State" name="state" className="form-control" value={this.state.state} onChange={this.changestateHandler}/>
                                   </div>
-                                  <div className="form-group">
-                                      <label>Country</label>
+                                  <div className="form-group text-left">
+                                      <label>Country:</label>
                                       <input placeholder="Country" name="country" className="form-control" value={this.state.country} onChange={this.changecountryHandler}/>
                                   </div>
-                                  <div className="form-group">
-                                      <label>Zipcode</label>
+                                  <div className="form-group text-left">
+                                      <label>Zipcode:</label>
                                       <input placeholder="Zipcode" name="zipcode" className="form-control" value={this.state.zipcode} onChange={this.changezipcodeHandler}/>
                                   </div>
-                                  <div className="form-group">
-                                      <label>Landmark</label>
+                                  <div className="form-group text-left">
+                                      <label>Landmark:</label>
                                       <input placeholder="Landmark" name="landmark" className="form-control" value={this.state.landmark} onChange={this.changelandmarkHandler}/>
                                   </div>
                                   <button className="btn btn-primary float-left"  onClick={this.Back.bind(this)} style={{marginLeft:"10px"}}>Back</button>
@@ -107,7 +111,7 @@ class addressForm extends Component {
                         </div>
                     </div>
                 </div>
-
+<Footer/>
             </div>
         )
     }

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setColleges } from "./action/college_action";
 import HeaderComponent from "./Header";
 import Footer from "./Footer";
+import "./homeform.css"
 const { useEffect } = React;
 
 const axios = require("axios");
@@ -24,7 +25,7 @@ function CollegePage() {
   console.log(colleges);
 
   return (
-    <div>
+    <div class="homeform">
       <HeaderComponent />
       <section id="specs" class="specs-section-head">
         <div class="container">
@@ -32,7 +33,7 @@ function CollegePage() {
             <div class="col-12">
               <h2 class="heading">
                 <strong>
-                  College List
+                  College 
                 </strong>
               </h2>
             </div>
@@ -44,21 +45,20 @@ function CollegePage() {
           {colleges.length &&
             colleges.map((clg) => (
               <Col key={clg.collegeRegId}>
-                <Card>
+                <Card style={{ marginBottom: '.5rem' }}>
                   <Card.Body>
                     <Card.Title>{clg.collegeName}</Card.Title>
+                    <span><em>{clg.collegeName}</em> is one of the top ranking college, offering undergraduate, postgraduate and doctoral programs in Engineering,&nbsp;...</span>&nbsp;
+                    
                     <div class="dropdown">
                       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         View details
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="http://localhost:3000/coursehome">Courses</a>
-                        <a class="dropdown-item" href="#">Branchs</a>
-                        <a class="dropdown-item" href="#">Programs</a>
-                      </div>&nbsp;
-                      <button class="btn btn-danger" type="button">                           
-                        Apply
-                      </button>                    
+                        <a class="dropdown-item" href="http://localhost:3000/coursehome">Course</a>
+                        <a class="dropdown-item" href="http://localhost:3000/branchpage">Branch</a>
+                        <a class="dropdown-item" href="http://localhost:3000/programpage">Program</a>
+                      </div>&nbsp;                   
                     </div>
                   </Card.Body>
                 </Card>
