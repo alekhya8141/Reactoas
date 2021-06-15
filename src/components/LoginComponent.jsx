@@ -58,7 +58,7 @@ class LoginComponent extends Component {
             <h3 className="text-center"><b>LOGIN</b></h3>
               <form action="#">
                 <div id="row">
-                  <div className="input-group col-lg-12 mb-4">
+                  <div className="input-group col-lg-12 mb-3">
                     <div className="input-group-prepend">
                       <span id="sp" className="input-group-text bg-white px-4 border-md border-right-0">
                         <i className="fa fa-user"></i> 
@@ -66,17 +66,16 @@ class LoginComponent extends Component {
                     </div>
                     <input
                       id="userid"
-                      type="userid"
-                      name="userid"
+                      type="text"
+                      name="userId"
                       placeholder="UserId"
                       className="form-control bg-white border-left-0 border-md"
                       value={this.state.userid}
                       onChange={this.changeUserIdHandler}
-                      required
                     />
                   </div>
 
-                  <div className="input-group col-lg-12 mb-4">
+                  <div className="input-group col-lg-12 mb-3">
                     <div className="input-group-prepend">
                       <span id="sp" className="input-group-text bg-white px-4 border-md border-right-0">
                         <i className="fa fa-lock">
@@ -93,7 +92,7 @@ class LoginComponent extends Component {
                       onChange={this.changePasswordHandler}
                     />
                   </div>
-                  <div className="form-group col-lg-12 mx-auto mb-0">
+                  <div className="form-group col-lg-12 mx-auto mb-3">
                     <button
                       // href="#"
                       className="btn btn-primary btn-block py-2 acc"
@@ -101,8 +100,9 @@ class LoginComponent extends Component {
                     >
                       <span className="font-weight-bold">LOGIN</span>
                     </button>
+                    <br></br>
                     <div id="heyyy">
-                      <b>Don't have an account?</b>{" "}
+                      <b>Don't have an account??</b>{" "}
                       <Link to="/sign-up/_add" ><b>SignUp</b></Link>
                     </div>
                   </div>
