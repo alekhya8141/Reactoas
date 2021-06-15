@@ -42,8 +42,6 @@ import AdminHome from './components/AdminHome';
 import ListAllUsers from './components/user/listAllUsers';
 import UpdateUser from './components/user/updateUser';
 import ViewUser from './components/user/viewUser';
-import Register from './components/SignUpComponent';
-import LoginComponent from './components/LoginComponent';
 import createUser from './components/user/createUser';
 import Program from './components/Programcomp/program';
 import ProgramSch from './components/pschComponents/programSch';
@@ -61,7 +59,6 @@ import HomeLogout from './components/homeLogout';
 import UniversityPage from './components/universityPage';
 import ProgramHome from './components/programPage';
 import BranchHome from './components/branchPage';
-import AdmissionSer from './components/ApplicationModule/applicationUser';
 
 
 function App() {
@@ -101,8 +98,6 @@ function App() {
           <Route path="/makepayment" component={PaymentMethod}></Route>
           <Route path="/applicationform" component={ApplicationForm}></Route>
           <Route path="/a" component={ApplicationDetails}></Route>
-          <Route path="/sign-up/_add" exact component={Register}></Route>
-          <Route path="/login" exact component={LoginComponent}></Route>
           <Route path="/ahome" exact component={AdminHome}></Route>
           <Route path="/course" component={ListCourseComponent}></Route>
           <Route path="/add-course" component={CourseDetails}></Route>
@@ -132,11 +127,9 @@ function App() {
           <Route path="/coursehome" component={CourseHome}></Route>
           <Route path="/programhome" component={ProgramHome}></Route>
           <Route path="/branchhome" component={BranchHome}></Route>
-          <Route path="/apph" component={AdmissionSer}></Route>
         </switch>
       </div>
     </Router>
   );
 }
-
 export default App;
