@@ -30,8 +30,8 @@ import Payment from './components/PaymentModule/payment';
 import UpdatePayment from './components/PaymentModule/updatePayment';
 import ViewPayment from './components/PaymentModule/viewPayment';
 import PaymentMethod from "./components/PaymentModule/paymentPage";
-import ApplicationForm from "./components/ApplicationModule/applicationPage"
-import ApplicationDetails from "./components/ApplicationModule/applicationDetails"
+
+import ApplicationForm from "./components/ApplicationModule/applicationForm"
 import ListCourseComponent from './components/course/ListCourseComponent';
 import CourseDetails from './components/course/CourseDetails';
 import UpdateCourseComponent from './components/course/UpdateCourseComponent';
@@ -62,12 +62,14 @@ import CourseHome from './components/coursehome';
 import HomeLogout from './components/homeLogout';
 import UniversityPage from './components/universityPage';
 
+
 function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
-        <Route exact path="/university/add" component={AddUniversity} />
+
+      <Route exact path="/paymentform" component={PaymentForm} />
+      <Route exact path="/university/add" component={AddUniversity} />
           <Route path="/update-university/:universityId" component={UpdateUniversity} />
           <Route path="/view-university/:universityId" component={ViewUniversity} />
           <Route path="/add-university" component={AddUniversity} />
@@ -98,7 +100,6 @@ function App() {
           <Route path="/update-payments/:paymentId" component={UpdatePayment}></Route>
           <Route path="/makepayment" component={PaymentMethod}></Route>
           <Route path="/applicationform" component={ApplicationForm}></Route>
-          <Route path="/a" component={ApplicationDetails}></Route>
           <Route path="/sign-up/_add" exact component={Register}></Route>
           <Route path="/login" exact component={LoginComponent}></Route>
           <Route path="/ahome" exact component={AdminHome}></Route>
@@ -115,7 +116,6 @@ function App() {
           <Route path="/view-user/:userid" exact component={ViewUser}></Route>
           <Route path="/create-user" exact component={createUser}></Route>
           <Route path="/" exact component={Home}></Route>
-          <Route path="/home" exact component={Home}></Route>
           <Route path="/homelogout" component={HomeLogout}></Route>
           <Route path="/Programs" component={Program}></Route>
           <Route path="/view-programs/:programId" component={ViewProgram}></Route>
@@ -128,9 +128,3 @@ function App() {
           <Route path="/collegepage" component={CollegePage}></Route>
           <Route path="/universitypage" component={UniversityPage}></Route>
           <Route path="/coursehome" component={CourseHome}></Route>
-      </Switch>
-      </div>
-    </Router>
-  );
-}
-export default App;

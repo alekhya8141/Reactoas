@@ -96,10 +96,6 @@ class UpdatePayment extends Component {
                                         <input placeholder="paymentAmount" name="paymentAmount" className="form-control" value={this.state.paymentAmount} onChange={this.changepaymentAmountHandler}/>
                                     </div>
                                     <div className="form-group text-left">
-                                        <label>PaymentDescription:</label>
-                                        <input placeholder="paymentDescription" name="paymentDescription" className="form-control" value={this.state.paymentDescription} onChange={this.changepaymentDescriptionHandler}/>
-                                    </div>
-                                    <div className="form-group text-left">
                                         <label>PaymentDate:</label>
                                         <input placeholder="paymentDate" name="paymentDate" className="form-control" value={this.state.paymentDate} onChange={this.changepaymentDateHandler}/>
                                     </div>

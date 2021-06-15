@@ -11,8 +11,7 @@
 }
 
 .payment-head {
-    background-color:purple;
-    color: white;
+    color:red;
     width: 50%;
 }
 
@@ -53,4 +52,10 @@
     padding-left: 5px;
     border-radius: 5px;
     border: 2px solid grey;
+}
+#image{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;  
+  background-size: cover;
 }

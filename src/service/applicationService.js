@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const APPLICATION_API_BASE_URL = "http://localhost:8082/application";
+const APPLICATION_API_BASE_URL = "http://localhost:8081/application";
 
 class ApplicationService {
 
@@ -19,6 +19,9 @@ class ApplicationService {
   }
   async deleteApplication(applicationId) {
     return await axios.delete(APPLICATION_API_BASE_URL + "/" + applicationId);
+  }
+  async getApplicationByApplicantFullName(applicantFullName){
+    return await axios.get(APPLICATION_API_BASE_URL + "/" + applicantFullName );
   }
 }
 export default new ApplicationService();

@@ -38,22 +38,26 @@ deleteAddressById = (addressId) => {
   AddressService.deleteAddressById (addressId);
 };
 
+goback(){
+  this.props.history.push('/ahome');
+}
+
       render() {
         return (
           <div>
-            <h2 classname="text-center">address</h2>
+            <h2 classname="text-center">Address</h2>
             <div className="row">
             <button type="button" class="btn btn-sm btn-info" onClick={this.addAddress}>Add Address</button>
             <table className="table table-mt-7">
               <thead>
                 <tr>
-                  <th>addressId</th>
-                  <th>city</th>
-                  <th>district</th>
-                  <th>state</th>
-                  <th>country</th>
-                  <th>zipcode</th>
-                  <th>landmark</th>
+                  <th>AddressId</th>
+                  <th>City</th>
+                  <th>District</th>
+                  <th>State</th>
+                  <th>Country</th>
+                  <th>Zipcode</th>
+                  <th>Landmark</th>
                   <th colSpan="2">Action</th>
                 </tr>
               </thead>
@@ -83,6 +87,7 @@ deleteAddressById = (addressId) => {
                       }
                   </tbody>
                   </table>
+                  <button className="btn btn-info size-lg" onClick={this.goback.bind(this)}><i className="fa fa-arrow-left "></i></button>
                   </div>
                   </div>
                   

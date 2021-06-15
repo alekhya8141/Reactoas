@@ -31,10 +31,10 @@ class HeaderLogout extends React.Component {
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a class="nav-link" href="/home"><i class="fas fa-home fa-lg"></i> <span class="sr-only">(current)</span></a> </li>
-                <li class="nav-item"><a class="nav-link" href="#">University</a></li>
+                <li class="nav-item active"><a class="nav-link" href="http://localhost:3000/"><i class="fas fa-home fa-lg"></i> <span class="sr-only">(current)</span></a> </li>
+                <li class="nav-item"><a class="nav-link" href="http://localhost:3000/universityPage">University</a></li>
                 <li class="nav-item"><a class="nav-link" href="http://localhost:3000/collegepage">College</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Admissions</a></li>
+                <li class="nav-item"><a class="nav-link" href="http://localhost:3000/applicationform">Admissions</a></li>
               </ul>
               <form class="form-inline my-3 my-lg-3">
                 <div className="input-group w-100">
@@ -52,12 +52,12 @@ class HeaderLogout extends React.Component {
                       type="submit">
                       {" "}
                       <Search />
-                    </button>{" "}
+                    </button> &nbsp;{" "}
                   </div>
                 </div>
               </form>
               <a href="http://localhost:3000/">
-              <button class="btn btn-lg btn-info" role="button" onClick={this.logout}>LOGOUT &raquo;</button></a>
+              <button id="llg" class="btn btn-outline-light" role="button" onClick={this.logout}><i class="fas fa-sign-out-alt"></i> LOGOUT</button></a>
             </div>
           </nav>
         </header>

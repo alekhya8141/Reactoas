@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import UserService from "../service/UserService";
+import UserService from "../../src/service/UserService";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./signupLogin.css";
 import HeaderComponent from "./Header";
 import Footer from "./Footer";
-import Joi from "joi-browser";
 import {
   Facebook,
   Google,

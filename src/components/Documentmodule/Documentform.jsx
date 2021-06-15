@@ -1,6 +1,6 @@
 import React,{ Component } from 'react'
 import DocumentService from '../../service/DocumentService'
-  
+
 class Documentform extends Component{
     constructor(props){
         super(props)
@@ -18,16 +18,43 @@ class Documentform extends Component{
         this.changedocumentUrlHandler=this.changedocumentUrlHandler.bind(this);
         this.changeapplicantidHandler=this.changeapplicantidHandler.bind(this);
         this.changeemailidHandler=this.changeemailidHandler.bind(this);
-        this.saveDocument=this.saveDocument.bind(this);
     }
-    saveDocument= (e) =>{
-        e.preventDefault();
-        let document ={documentid:this.state.documentid,documentName:this.state.documentName,documentUrl:this.state.documentUrl,applicantid:this.state.applicantid,emailid:this.state.emailid};
-        console.log('document => '+JSON.stringify(document));
-
-        DocumentService.CreateDocument(document).then(res => {
-           this.props.history.push(`/document`);
+    schema = {
+        documentName :Joi.string().min(3).max(10).required(),
+        documentUrl:Joi.string().min(1).max(10).required(),
+        applicantid:Joi.string().email().required(),
+        emailid: Joi.string().min(8).max(15).alphanum().required(),
+      };
+      validate = () => {
+        const errors = {};
+        const result = Joi.validate(this.state,this.schema, {
+          abortEarly: false,allowUnknown:true,
         });
+        
+        if (result.error !== null) {
+         
+          for (let err of result.error.details) {
+            errors[err.path[0]] = err.message;
+          }
+        }
+      
+        return Object.keys(errors).length === 0 ? null : errors;
+      };
+      handleOnSubmit = async (e) => {
+        e.preventDefault();
+        const errors = this.validate()
+       this.setState({ errors: errors || {} });
+        if (errors) return;
+        
+        let user = {
+            documentName: this.state.documentName,
+            documentUrl: this.state.documentUrl,
+            applicantid: this.state.applicantid,
+            emailid: this.state.emailid,
+        };
+      
+        console.log("user => " + JSON.stringify(user));
+    
     }
     changedocumentidHandler =(event) =>{
         this.setState({documentid:event.target.value});
@@ -43,54 +70,61 @@ class Documentform extends Component{
     }
     changeemailidHandler =(event) => {
         this.setState({emailid:event.target.value});
-    }
-    cancel(){
-        this.props.history.push('/document');
+
+};
+    Back(){
+        this.props.history.push('/addressForm');
     }
 render(){
     return(
-        <div>
-            <div className = "container-md" >
+        <div class="homeform">
+            <HeaderLogout/>
+            <div className = "container-md" style={{ marginBottom: "50px", marginTop: "50px" }}>
                 <div className = "row">
                     <div className = "card col-md-6 offset-md-3 offset-md-3">
-                        <h3 className = "text-center">Documentform</h3>
+                        <h3 className = "text-center">DocumentForm</h3>
                           <div className = "card-body">
                               <form>
-                              <div className="form-group">
-                                      <label>documentid</label>
-                                      <input placeholder="documentid" name="documentid" className="form-control" value={this.state.documentid} onChange={this.changedocumentidHandler}/>
+
                                   </div>
-                                  <div className="form-group">
-                                      <label>documentName</label>
-                                      <input placeholder="documentName" name="documentName" className="form-control" value={this.state.documentName} onChange={this.changedocumentNameHandler}/>
+                                  <div className="form-group text-left">
+                                      <label>DocumentUrl:</label>
+                                      <input placeholder="DocumentUrl" name="documentUrl" className="form-control" value={this.state.documentUrl} onChange={this.changedocumentUrlHandler}/>
+                                      {this.state.errors && (
+                        <small id="documentUrl" className="form-text text-danger">
+                           {this.state.errors.documentUrl}
+                            </small>
+                                      )}
                                   </div>
-                                  <div className="form-group">
-                                      <label>documentUrl</label>
-                                      <input placeholder="documentUrl" name="documentUrl" className="form-control" value={this.state.documentUrl} onChange={this.changedocumentUrlHandler}/>
+                                  <div className="form-group text-left">
+                                      <label>ApplicantId:</label>
+                                      <input placeholder="ApplicantId" name="applicantid" className="form-control" value={this.state.applicantid} onChange={this.changeapplicantidHandler}/>
+                                      {this.state.errors && (
+                        <small id="applicantid" className="form-text text-danger">
+                           {this.state.errors.applicantid}
+                            </small>
+                                      )}
                                   </div>
-                                  <div className="form-group">
-                                      <label>applicantid</label>
-                                      <input placeholder="applicantid" name="applicantid" className="form-control" value={this.state.applicantid} onChange={this.changeapplicantidHandler}/>
+                                  <div className="form-group text-left">
+                                      <label>EmailId:</label>
+                                      <input placeholder="EmailId" name="emailid" className="form-control" value={this.state.emailid} onChange={this.changeemailidHandler}/>
+                                      {this.state.errors && (
+                        <small id="emailid" className="form-text text-danger">
+                           {this.state.errors.emailid}
+                            </small>
+                                      )}
                                   </div>
-                                  <div className="form-group">
-                                      <label>emailid</label>
-                                      <input placeholder="emailid" name="emailid" className="form-control" value={this.state.emailid} onChange={this.changeemailidHandler}/>
-                                  </div>
-                                  <form>
-                                 <div class="form-group">
-                                 <label for="exampleFormControlFile1">file</label>
-                                 <input type="file" class="form-control-file" id="exampleFormControlFile1"/>
-                                 </div>
-                                 </form>
-                                  <button className="btn btn-success" onClick={this.saveDocument}>Save</button>
-                                  <button className="btn btn-danger"  onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}}>Cancel</button>
+                                  <button className="btn btn-primary float-left"  onClick={this.Back.bind(this)} style={{marginLeft:"10px"}}>Back</button>
+                                  <button className="btn btn-success float-right" onClick={this.saveDocument}>Next</button>
                               </form>
                           </div>
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
 }
+
 export default Documentform

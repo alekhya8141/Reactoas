@@ -19,43 +19,39 @@ class getAddressId extends Component {
     render() { 
         return ( 
             <div className="card col-md-6 offset-md-3">
-                <h3 className ="text-center"> getAddressId</h3>
-                <div className="card bg-info text-dark">
+                <h3 className ="text-center">View Address</h3>
                 <div className ="card-body">
                 <h1>{this.props.match.params.addressId}</h1>
                     <div className ="row">
-                        <label><b>addressId: </b></label>
+                        <label><b>AdressId: </b></label>
                         <div>{this.state.address.addressId}</div>
                     </div>
                     <div className ="row">
-                        <label><b>city:</b> </label>
+                        <label><b>City:</b> </label>
                         <div>{this.state.address.city}</div>
                     </div>
                     <div className ="row">
-                        <label><b>district: </b></label>
+                        <label><b>District: </b></label>
                         <div>{this.state.address.district}</div>
                     </div>
                     <div className ="row">
-                        <label><b>state: </b></label>
+                        <label><b>State: </b></label>
                         <div>{this.state.address.state}</div>
                     </div>
                     <div className ="row">
-                        <label><b>country: </b></label>
+                        <label><b>Country: </b></label>
                         <div>{this.state.address.country}</div>
                     </div>
                     <div className ="row">
-                        <label><b>zipcode: </b></label>
+                        <label><b>Zipcode: </b></label>
                         <div>{this.state.address.zipcode}</div>
                     </div>
                     <div className ="row">
-                        <label><b>landmark: </b></label>
+                        <label><b>Landmark: </b></label>
                         <div>{this.state.address.landmark}</div>
-                    </div>
-                        
+                    </div>  
                 </div>
-
                 </div>
-            </div>
          )
     }
 }

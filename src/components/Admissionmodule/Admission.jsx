@@ -36,20 +36,23 @@ deleteAdmissionById = (admissionId) => {
     this.setState({ admission });
     AdmissionService.deleteAdmissionById (admissionId);
   };
+  goback(){
+    this.props.history.push('/ahome');
+}
 render() {
     return (
       <div className="container-md">
-        <h2 classname="text-center">admission</h2>
+        <h2 classname="text-center">Admission</h2>
         <div className="row">
         <button type="button" class="btn btn-sm btn-info" onClick={this.addAdmission}>Add Admission</button></div>
         <div className="row">
         <table className="table table-mt-6">
           <thead className="table-light">
             <tr>
-              <th>admissionId</th>
-              <th>emailId</th>
-              <th>admissionStatus</th>
-              <th>year</th>
+              <th>AdmissionId</th>
+              <th>EmailId</th>
+              <th>AdmissionStatus</th>
+              <th>Year</th>
               <th colSpan="2">Action</th>
             </tr>
           </thead>
@@ -75,6 +78,7 @@ render() {
                   }
               </tbody>
               </table>
+              <button className="btn btn-info size-lg" onClick={this.goback.bind(this)}><i className="fa fa-arrow-left "></i></button>
               </div>
               </div>
     )}}

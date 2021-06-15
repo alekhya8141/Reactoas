@@ -3,19 +3,31 @@ import React, { Component } from "react";
 // import Header from './Header'
 //import NavBar from './NavBar';
 import "./paymentcss.css";
+import Footer from "../Footer";
+import HeaderLogout from "../headerLogout";
+import "../homeform.css"
 export default class PaymentMethod extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      paymentDate: Date().toLocaleString()
+  }
+  }
+  goback() {
+    this.props.history.push("/paymentform");
   }
 
   gotoHomePageHandle = () => {
     alert("Successfully Paid");
-    this.props.history.push("/");
+    this.props.history.push("/homelogout");
   };
 
   render() {
     return (
-      <div>
+      <div class="homeform">
+        <HeaderLogout/>
+      <div id="image">
+        <div><br/><br/><span class= "badge bg-light text-center" style= {{marginLeft:"660px"}}><h6><b>Payment Date and Time : { this.state.paymentDate }</b></h6></span></div>
         <div class="container paymentcontainer">
           <center>
             <div class="payment-head">
@@ -38,77 +50,111 @@ export default class PaymentMethod extends Component {
                     <center>
                       <table className="table  text-center table-responsive table-bordered">
                         <tr>
-                          <td>
-                            <button className="btn">
-                              <img
-                                src="assets/Logos/Bank/hdfc.png"
-                                width="200px"
-                                height="200px"
-                                alt="hdfc"
-                              />
-                            </button>
+                          <td><button>
+                          <img
+                              src="assets/Logos/Bank/hdfc.png"
+                              width="200px"
+                              height="200px"
+                              alt="hdfc"
+                              onClick={this.gotoHomePageHandle}
+
+                            />
+                          </button>
+                           
                           </td>
 
-                          <td>
-                            <button className="btn">
-                              <img
-                                src="assets/Logos/Bank/sbi.jpg"
-                                width="200px"
-                                height="200px"
-                                alt="sbi"
-                              />
-                            </button>
+                          <td><button>
+                          <img
+                              src="assets/Logos/Bank/sbi.jpg"
+                              width="200px"
+                              height="200px"
+                              alt="sbi"
+                              onClick={this.gotoHomePageHandle}
+
+                            />
+                          </button>
+                            
                           </td>
 
-                          <td>
-                            <button className="btn">
-                              <img
-                                src="assets/Logos/Bank/axis.png"
-                                width="200px"
-                                height="200px"
-                                alt="axis"
-                              />
-                            </button>
+                          <td><button>
+                          <img
+                              src="assets/Logos/Bank/axis.png"
+                              width="200px"
+                              height="200px"
+                              alt="axis"
+                              onClick={this.gotoHomePageHandle}
+
+                            />
+
+                          </button>
+                           
+                          </td>
+                          <td><button>
+                          <img
+                              src="assets/Logos/Bank/indianbank.png"
+                              width="200px"
+                              height="200px"
+                              alt="indianbank"
+                              onClick={this.gotoHomePageHandle}
+
+                            />
+                          </button>
                           </td>
                         </tr>
 
                         <tr>
-                          <td>
-                            <button className="btn">
-                              <img
-                                src="assets/Logos/Bank/icici.png"
-                                width="200px"
-                                height="200px"
-                                alt="icici"
-                              />
-                            </button>
+                          <td><button>
+                          <img
+                              src="assets/Logos/Bank/icici.png"
+                              width="200px"
+                              height="200px"
+                              alt="icici"
+                              onClick={this.gotoHomePageHandle}
+
+                            />
+
+                          </button>
+                            
                           </td>
 
-                          <td>
-                            <button className="btn">
-                              <img
-                                src="assets/Logos/Bank/kotak.png"
-                                width="200px"
-                                height="200px"
-                                alt="kotak"
-                              />
-                            </button>
+                          <td><button>
+                          <img
+                              src="assets/Logos/Bank/kotak.png"
+                              width="200px"
+                              height="200px"
+                              alt="kotak"
+                              onClick={this.gotoHomePageHandle}
+
+                            />
+                          </button>
+                           
                           </td>
 
-                          <td>
-                            <button className="btn">
-                              <img
-                                src="assets/Logos/Bank/pnb.png"
-                                width="200px"
-                                height="200px"
-                                alt="pnb"
-                              />
-                            </button>
+                          <td><button>
+                            <img
+                              src="assets/Logos/Bank/pnb.png"
+                              width="200px"
+                              height="200px"
+                              alt="pnb"
+                              onClick={this.gotoHomePageHandle}
+
+                            /></button>
+                          </td>
+
+                          <td><button>
+                            <img
+                              src="assets/Logos/Bank/federal.jpg"
+                              width="200px"
+                              height="200px"
+                              alt="federal"
+                              onClick={this.gotoHomePageHandle}
+
+                            /></button>
                           </td>
                         </tr>
                       </table>
                     </center>
-                    <h4 style={{ "text-align": "center" }}>Other Bank</h4>
+                    <h4>Other Bank</h4>
                     <select
                       className="bank-option"
                       onfocus="this.size=5;"
@@ -135,6 +181,7 @@ export default class PaymentMethod extends Component {
                       <option value="Federal Bank">Federal Bank</option>
                     </select>
                     <br />
+
                     <center>
                       <input
                         type="button"
@@ -176,7 +223,9 @@ export default class PaymentMethod extends Component {
                     placeholder="CARD NUMBER"
                     name="cardNumber"
                     id="cardNumber"
+                    minLength="16"
                     maxLength="16"
+                    required="cardNumber is required"
                   />
                   <br />
                   <input
@@ -185,13 +234,16 @@ export default class PaymentMethod extends Component {
                     placeholder="CVV"
                     name="cardCVV"
                     id="cardCVV"
-                    length="3"
+                    minLength="3"
+                    maxLength="3"
                   />
                   <b className="col-2 col-sm-2">Expiry Date</b>
                   <input
                     type="number "
                     placeholder="MM/YY"
                     className="col-5 col-sm-5 payment-input"
+                    maxLength="5"
+                    minLength="5"
                   />
                   <br />
                   <input
@@ -238,6 +290,8 @@ export default class PaymentMethod extends Component {
                       width="130"
                       height="100"
                       alt="amazonpay"
+                      onClick={this.gotoHomePageHandle}
+
                     />
                   </button>
                   <button class="btn upi-button">
@@ -246,6 +300,8 @@ export default class PaymentMethod extends Component {
                       width="100"
                       height="100"
                       alt="gpay"
+                      onClick={this.gotoHomePageHandle}
+
                     />
                   </button>
                   <button class="btn upi-button">
@@ -254,6 +310,8 @@ export default class PaymentMethod extends Component {
                       width="100"
                       height="100"
                       alt="phonepe"
+                      onClick={this.gotoHomePageHandle}
+
                     />
                   </button>
                   <button class="btn upi-button">
@@ -262,6 +320,8 @@ export default class PaymentMethod extends Component {
                       width="130"
                       height="100"
                       alt="upi"
+                      onClick={this.gotoHomePageHandle}
+
                     />
                   </button>
                   <button class="btn upi-button">
@@ -270,6 +330,8 @@ export default class PaymentMethod extends Component {
                       width="100"
                       height="100"
                       alt="mobikwik"
+                      onClick={this.gotoHomePageHandle}
+
                     />
                   </button>
                   <button class="btn upi-button">
@@ -278,6 +340,8 @@ export default class PaymentMethod extends Component {
                       width="100"
                       height="100"
                       alt="jio"
+                      onClick={this.gotoHomePageHandle}
+
                     />
                   </button>
                 </form>
@@ -287,6 +351,15 @@ export default class PaymentMethod extends Component {
         </div>
 
         {/**Ending Tag */}
+        <button
+          className="btn btn-primary size-lg "
+          style={{ marginTop: "20px", marginBottom:"20px",marginRight: "600px"}}
+          onClick={this.goback.bind(this)}
+        >
+         Back
+        </button>
+      </div>
+      <Footer/>
       </div>
     );
   }
