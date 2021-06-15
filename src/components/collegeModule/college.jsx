@@ -33,6 +33,9 @@ class College  extends Component{
     getCollegeByCollegeRegId(collegeRegId){
         this.props.history.push(`/getCollege-collegeRegId/${collegeRegId}`);
       }
+    goback(){
+        this.props.history.push('/ahome');
+    }
 render(){
     return(
         <div>
@@ -68,6 +71,7 @@ render(){
                     </tbody>
                 </table>
             </div>
+            <button className="btn btn-info size-lg" onClick={this.goback.bind(this)}><i className="fa fa-arrow-left "></i></button>
         </div>
     )
 }

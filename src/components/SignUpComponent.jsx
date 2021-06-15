@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import UserService from "../service/UserService";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./signupLogin.css";
+import HeaderComponent from "./Header";
+import Footer from "./Footer";
+import Joi from "joi-browser";
 import {
   Facebook,
   Google,
@@ -25,8 +28,9 @@ class Register extends Component{
             email:'',
             password:'',
             mobileNumber:'',
-            aadharnumber:''
-        }
+            aadharnumber:'',
+            errors:{}
+        };
         this.changeUserIdHandler=this.changeUserIdHandler.bind(this);
         this.changeFirstNameHandler=this.changeFirstNameHandler.bind(this);
         this.changeLastNameHandler=this.changeLastNameHandler.bind(this);
@@ -36,14 +40,57 @@ class Register extends Component{
         this.changeaadharnumberHandler=this.changeaadharnumberHandler.bind(this);
         this.saveUser=this.saveUser.bind(this);
     }
-    saveUser= (e) =>{
-        e.preventDefault();
-        let user ={userid:this.state.userid,firstname:this.state.firstname,lastname:this.state.lastname,email:this.state.email,password:this.state.password,mobileNumber:this.state.mobileNumber,aadharnumber:this.state.aadharnumber};
-        console.log('user => '+JSON.stringify(user));
-        UserService.createUser(user).then(res => {
-           this.props.history.push(`/login`);
-        });
-    }
+    schema = {
+      userid: Joi.string().min(4).alphanum().required(),
+      firstname:Joi.string().min(2).max(20).required(),
+      lastname:Joi.string().min(1).max(20).required(),
+      email:Joi.string().email().required(),
+      password: Joi.string().min(8).max(15).alphanum().required(),
+      mobileNumber:Joi.string().min(10).max(10).required(),
+      aadharnumber:Joi.string().min(12).max(12).required()
+    };
+    validate = () => {
+      const errors = {};
+      const result = Joi.validate(this.state,this.schema, {
+        abortEarly: false,allowUnknown:true,
+      });
+      
+      if (result.error !== null) {
+       
+        for (let err of result.error.details) {
+          errors[err.path[0]] = err.message;
+        }
+      }
+    
+      return Object.keys(errors).length === 0 ? null : errors;
+    };
+    saveUser = async (e) => {
+      e.preventDefault();
+      const errors = this.validate()
+     this.setState({ errors: errors || {} });
+      if (errors) return;
+      
+      let user = {
+        email: this.state.email,
+        firstname: this.state.firstname,
+        lastname: this.state.lastname,
+        login: {
+          loggedIn: "false",
+          password: this.state.password,
+          userid: this.state.userid,
+        },
+        mobileNumber: this.state.mobileNumber,
+        aadharnumber: this.state.aadharnumber,
+        password: this.state.password,
+        userid: this.state.userid,
+      };
+    
+      console.log("user => " + JSON.stringify(user));
+  
+      UserService.createUser(user).then((res) => {
+        this.props.history.push(`/login`);
+      });
+    };
     changeUserIdHandler =(event) =>{
         this.setState({userid:event.target.value});
     }
@@ -71,26 +118,9 @@ class Register extends Component{
     
 render(){
     return(
+      <div>
+        <HeaderComponent/>
       <div id="hellooo">
-      {/* <header className="header">
-        <nav className="navbar navbar-expand-lg navbar-light py-3">
-          <div className="container">
-            <a href="#" className="navbar-brand">
-              MedEasy
-            </a>
-          </div>
-        </nav>
-      </header> */}
-
-          {/*<div className="col-md-7 col-lg-6 ml-auto">
-            <form action="#">
-              <div id="head">
-                <a href="#" id="heading">
-                  <span id="medhead">MedEasy</span>{" "}
-                  <img src={medeasy} id="medlogo" alt="MedEasy" 
-                  className="vert-move"/>
-                  {/* <span id="reg">&reg;</span> 
-                </a>></div>*/}
               <h2 className="text-center"><b>REGISTER</b></h2>
               <div>
               <div className="input-group col-lg-12 mb-1">
@@ -102,14 +132,19 @@ render(){
                   </div>
 
                   <input
-                    id="UserId"
+                    id="userid"
                     type="text"
-                    name="userId"
-                    placeholder="User Id"
+                    name="userid"
+                    placeholder="UserId"
                     className="form-control bg-white border-md border-left-0 pl-3"
                     value={this.state.userid}
                     onChange={this.changeUserIdHandler}
                   />
+                  {this.state.errors && (
+                      <small id="userid" className="form-text text-dark">
+                        {this.state.errors.userid}
+                      </small>
+                       )}
                 </div>
                 <div className="input-group col-lg-12 mb-1">
                   <div className="input-group-prepend">
@@ -126,6 +161,11 @@ render(){
                     value={this.state.firstname}
                     onChange={this.changeFirstNameHandler}
                   />
+                   {this.state.errors && (
+                        <small id="firstname" className="form-text text-dark">
+                           {this.state.errors.firstname}
+                            </small>
+                            )}
                     <div className="input-group-prepend">
                       <span className="input-group-text bg-white px-4 border-md border-right-0 ml-2">
                         {/* <i className="fa fa-user text-muted"> */}
@@ -142,6 +182,11 @@ render(){
                       value={this.state.lastname}
                       onChange={this.changeLastNameHandler}
                     />
+                    {this.state.errors && (
+                        <small id="lastname" className="form-text text-dark">
+                           {this.state.errors.lastname}
+                            </small>
+                            )}
                 </div>
                 <div className="input-group col-lg-12 mb-1">
                   <div className="input-group-prepend">
@@ -158,6 +203,11 @@ render(){
                     value={this.state.email}
                     onChange={this.changeEmailHandler}
                   />
+                  {this.state.errors && (
+                        <small id="email" className="form-text text-dark">
+                           {this.state.errors.email}
+                            </small>
+                            )}
                 </div>
                 <div className="input-group col-lg-12 mb-1">
                   <div className="input-group-prepend">
@@ -175,6 +225,11 @@ render(){
                     value={this.state.mobileNumber}
                     onChange={this.changeMobileNumberHandler}
                   />
+                  {this.state.errors && (
+                        <small id="mobileNumber" className="form-text text-dark">
+                           {this.state.errors.mobileNumber}
+                            </small>
+                            )}
                 </div>
                 <div className="input-group col-lg-12 mb-1">
                   <div className="input-group-prepend">
@@ -193,6 +248,11 @@ render(){
                     value={this.state.aadharnumber}
                     onChange={this.changeaadharnumberHandler}
                   />
+                  {this.state.errors && (
+                        <small id="aadharnumber" className="form-text text-dark">
+                           {this.state.errors.aadharnumber}
+                            </small>
+                            )}
                 </div>
                 <div className="input-group col-lg-12 mb-4">
                     <div className="input-group-prepend">
@@ -211,6 +271,11 @@ render(){
                       value={this.state.password}
                       onChange={this.changePasswordHandler}
                     />
+                    {this.state.errors && (
+                        <small id="password" className="form-text text-dark">
+                           {this.state.errors.password}
+                            </small>
+                            )}
                   </div>
                 <div className="form-group col-lg-12 mx-auto mb-0">
                   <button
@@ -243,7 +308,7 @@ render(){
                       <Facebook />
                     </i>
                     <span className="font-weight-bold">
-                      Continue with Facebook
+                      Continue with FACEBOOK
                     </span>
                   </button>
                   <button
@@ -279,6 +344,8 @@ render(){
                   </p>
                 </div>
              </div> 
+      </div>
+      <Footer/>
       </div>
     )
 }

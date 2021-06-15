@@ -5,6 +5,7 @@ import "./signupLogin.css";
 import {LockFill } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import HeaderComponent from "./Header";
+import Footer from "./Footer";
 
 // import {} from
 
@@ -41,17 +42,8 @@ class LoginComponent extends Component {
   render() {
     return (
       <div>
-      <HeaderComponent/>
       <div id="helloo">
-        {/* <header className="header">
-          <nav className="navbar navbar-expand-lg navbar-light py-3">
-            <div className="container">
-              <a href="#" className="navbar-brand">
-                MedEasy
-              </a>
-            </div>
-          </nav>
-        </header> */}
+      <HeaderComponent/>
         <div>
           <div className="row py-5 mt-4 align-items-center">
             <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
@@ -63,9 +55,10 @@ class LoginComponent extends Component {
               </h3>
             </div>
             <div className="col-md-7 col-lg-6 ml-auto">
+            <h3 className="text-center"><b>LOGIN</b></h3>
               <form action="#">
                 <div id="row">
-                  <div className="input-group col-lg-12 mb-4">
+                  <div className="input-group col-lg-12 mb-3">
                     <div className="input-group-prepend">
                       <span id="sp" className="input-group-text bg-white px-4 border-md border-right-0">
                         <i className="fa fa-user"></i> 
@@ -73,17 +66,16 @@ class LoginComponent extends Component {
                     </div>
                     <input
                       id="userid"
-                      type="userid"
-                      name="userid"
+                      type="text"
+                      name="userId"
                       placeholder="UserId"
                       className="form-control bg-white border-left-0 border-md"
                       value={this.state.userid}
                       onChange={this.changeUserIdHandler}
-                      required
                     />
                   </div>
 
-                  <div className="input-group col-lg-12 mb-4">
+                  <div className="input-group col-lg-12 mb-3">
                     <div className="input-group-prepend">
                       <span id="sp" className="input-group-text bg-white px-4 border-md border-right-0">
                         <i className="fa fa-lock">
@@ -100,7 +92,7 @@ class LoginComponent extends Component {
                       onChange={this.changePasswordHandler}
                     />
                   </div>
-                  <div className="form-group col-lg-12 mx-auto mb-0">
+                  <div className="form-group col-lg-12 mx-auto mb-3">
                     <button
                       // href="#"
                       className="btn btn-primary btn-block py-2 acc"
@@ -108,8 +100,9 @@ class LoginComponent extends Component {
                     >
                       <span className="font-weight-bold">LOGIN</span>
                     </button>
+                    <br></br>
                     <div id="heyyy">
-                      <b>Don't have an account?</b>{" "}
+                      <b>Don't have an account??</b>{" "}
                       <Link to="/sign-up/_add" ><b>SignUp</b></Link>
                     </div>
                   </div>
@@ -119,6 +112,7 @@ class LoginComponent extends Component {
           </div>
         </div>
     </div>
+    <Footer/>
     </div>
     );
   }

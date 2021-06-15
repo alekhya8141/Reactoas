@@ -96,7 +96,10 @@ class AdminHome extends React.Component {
               Administrator can add/ modify and approve / reject the students’ applications, view applications, view course, view the details of courses taken by students and search by course
               </p>
               <p>
-              Admin can see all the detail in brief.Admin can search application on the basis of user name, email id, and contact number
+              Admin can see all the detail in brief.
+              </p>
+              <p>
+              Admin can search application on the basis of user name, email id, and contact number
               </p>
               <p>
                 <Link class="btn btn-lg btn-info" role="button" onClick={this.logout}>LOGOUT &raquo;</Link>
