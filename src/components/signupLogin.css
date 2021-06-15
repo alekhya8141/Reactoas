@@ -7,15 +7,14 @@
 */
 #hellooo{
   padding:0px 50px 0px 50px;
-  background-image: url("C:\Users\madhu\git\Reactoas\src\images\girl.jpg");
+
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;  
   background-size: cover;
  }
  #helloo{
-  background-image: url("C:\Users\madhu\git\Reactoas\src\images\girl.jpg");
-  height: 720px;
+
   background-repeat: no-repeat;
   background-attachment: fixed;  
   background-size: cover;

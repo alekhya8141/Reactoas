@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import ApplicationService from '../../service/applicationService';
-
-
 class ViewApplication extends Component {
     constructor(props){
         super(props)
@@ -15,6 +13,10 @@ class ViewApplication extends Component {
             this.setState({application: res.data});
         })
     }
+    cancel(){
+        this.props.history.push('/applications');
+    }
+
     
     render() { 
         return ( 
@@ -24,46 +26,41 @@ class ViewApplication extends Component {
                 <div className ="card-body">
                 <h1>{this.props.match.params.applicationId}</h1>
                     <div className ="row">
-                        <label><b> applicationId: </b></label>
+                        <label><b> ApplicationId: </b></label>
                         <div>{this.state.application.applicationId}</div>
                     </div>
                     <div className ="row">
-                        <label><b> applicantFullName:</b> </label>
+                        <label><b> ApplicantFullName:</b> </label>
                         <div>{this.state.application.applicantFullName}</div>
                     </div>
                     <div className ="row">
-                        <label><b> dateOfBirth: </b></label>
+                        <label><b> DateOfBirth: </b></label>
                         <div>{this.state.application.dateOfBirth}</div>
                     </div>
                     <div className ="row">
-                        <label><b> highestQualification: </b></label>
+                        <label><b> HighestQualification: </b></label>
                         <div>{this.state.application.highestQualification}</div>
                     </div>
                     <div className ="row">
-                        <label><b> finalYearPercentage: </b></label>
+                        <label><b> FinalYearPercentage: </b></label>
                         <div>{this.state.application.finalYearPercentage}</div>
                     </div>
                     <div className ="row">
-                        <label><b> goals: </b></label>
+                        <label><b> Goals: </b></label>
                         <div>{this.state.application.goals}</div>
                     </div>
                     <div className ="row">
-                        <label><b> emailId: </b></label>
+                        <label><b> EmailId: </b></label>
                         <div>{this.state.application.emailId}</div>
                     </div>
                     <div className ="row">
-                        <label><b> applicationStatus: </b></label>
+                        <label><b> ApplicationStatus: </b></label>
                         <div>{this.state.application.applicationStatus}</div>
                     </div>
-                    <div className ="row">
-                        <label><b> dateOfInterview: </b></label>
-                        <div>{this.state.application.dateOfInterview}</div>
-                    </div>
-                    <div className ="row">
-                        <label><b> applicantInterviewFeedback: </b></label>
-                        <div>{this.state.application.applicantInterviewFeedback}</div>
-                    </div>    
+                    <button className="btn btn-danger float-right" onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}}>Cancel</button>
+
                 </div>
+
 
                 </div>
             </div>

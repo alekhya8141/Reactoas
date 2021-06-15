@@ -14,8 +14,7 @@ class UpdateApplication extends Component {
           goals: "",
           emailId: "",
           applicationStatus: "",
-          dateOfInterview: "",
-          applicantInterviewFeedback: "",
+         
         };
         this.changeapplicantFullNameHandler=this.changeapplicantFullNameHandler.bind(this);
         this.changedateOfBirthHandler=this.changedateOfBirthHandler.bind(this);
@@ -24,8 +23,6 @@ class UpdateApplication extends Component {
         this.changegoalsHandler=this.changegoalsHandler.bind(this);
         this.changeemailIdHandler=this.changeemailIdHandler.bind(this);
         this.changeapplicationStatusHandler=this.changeapplicationStatusHandler.bind(this);
-        this.changedateOfInterviewHandler=this.changedateOfInterviewHandler.bind(this);
-        this.changeapplicantInterviewFeedbackHandler=this.changeapplicantInterviewFeedbackHandler.bind(this);
         this.updateApplication=this.updateApplication.bind(this);
         this.changeIdHandler=this.changeIdHandler.bind(this);
     }
@@ -40,15 +37,13 @@ class UpdateApplication extends Component {
                 goals:application.goals,
                 emailId:application.emailId,
                 applicationStatus:application.applicationStatus,
-                dateOfInterview:application.dateOfInterview,
-                applicantInterviewFeedback:application.applicantInterviewFeedback,
             });
         });
     }
 
     updateApplication = (e) => {
         e.preventDefault();
-        let application={applicationId:this.state.applicationId,applicantFullName: this.state.applicantFullName, dateOfBirth: this.state.dateOfBirth,highestQualification: this.state.highestQualification,finalYearPercentage: this.state.finalYearPercentage,goals: this.state.goals,emailId: this.state.emailId,applicationStatus: this.state.applicationStatus,dateOfInterview: this.state.dateOfInterview,applicantInterviewFeedback:this.state.applicantInterviewFeedback};
+        let application={applicationId:this.state.applicationId,applicantFullName: this.state.applicantFullName, dateOfBirth: this.state.dateOfBirth,highestQualification: this.state.highestQualification,finalYearPercentage: this.state.finalYearPercentage,goals: this.state.goals,emailId: this.state.emailId,applicationStatus: this.state.applicationStatus};
         console.log('application => '+ JSON.stringify(application));
 
         ApplicationService.updateApplication(application,this.state.applicationId).then((res) => {
@@ -85,12 +80,7 @@ class UpdateApplication extends Component {
     changeapplicationStatusHandler=(event) =>{
         this.setState({applicationStatus: event.target.value})
     }
-    changedateOfInterviewHandler=(event) =>{
-        this.setState({dateOfInterview: event.target.value})
-    }
-    changeapplicantInterviewFeedbackHandler=(event) =>{
-        this.setState({applicantInterviewFeedback: event.target.value})
-    }
+ 
 
     cancel(){
         this.props.history.push('/applications');
@@ -139,14 +129,8 @@ class UpdateApplication extends Component {
                                         <label>ApplicationStatus:</label>
                                         <input placeholder="applicationStatus" name="applicationStatus" className="form-control" value={this.state.applicationStatus} onChange={this.changeapplicationStatusHandler}/>
                                     </div>
-                                    <div className="form-group text-left">
-                                        <label>DateOfInterview:</label>
-                                        <input placeholder="dateOfInterview" name="dateOfInterview" className="form-control" value={this.state.dateOfInterview} onChange={this.changedateOfInterviewHandler}/>
-                                    </div>
-                                    <div className="form-group text-left">
-                                        <label>ApplicantInterviewFeedback:</label>
-                                        <input placeholder="applicantInterviewFeedback" name="applicantInterviewFeedback" className="form-control" value={this.state.applicantInterviewFeedback} onChange={this.changeapplicantInterviewFeedbackHandler}/>
-                                    </div>
+                                   
+                                   
                                     <button className="btn btn-danger float-right" onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}}>Cancel</button>
                                     <button className="btn btn-success float-right" onClick={this.updateApplication}> Save</button>
 

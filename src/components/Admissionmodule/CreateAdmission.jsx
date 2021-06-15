@@ -51,20 +51,20 @@ render(){
                           <div className = "card-body">
                               <form>
                               <div className="form-group">
-                                      <label>admissionId</label>
-                                      <input placeholder="admissionId" name="admissionId" className="form-control" value={this.state.admissionId} onChange={this.changeadmissionIdHandler}/>
+                                      <label>AdmissionId</label>
+                                      <input placeholder="AdmissionId" name="admissionId" className="form-control" value={this.state.admissionId} onChange={this.changeadmissionIdHandler}/>
                                   </div>
                                   <div className="form-group">
-                                      <label>emailId</label>
-                                      <input placeholder="emailId" name="emailId" className="form-control" value={this.state.emailId} onChange={this.changeemailIdHandler}/>
+                                      <label>EmailId</label>
+                                      <input placeholder="EmailId" name="emailId" className="form-control" value={this.state.emailId} onChange={this.changeemailIdHandler}/>
                                   </div>
                                   <div className="form-group">
-                                      <label>admissionStatus</label>
-                                      <input placeholder="admissionStatus" name="admissionStatus" className="form-control" value={this.state.admissionStatus} onChange={this.changeadmissionStatusHandler}/>
+                                      <label>AdmissionStatus</label>
+                                      <input placeholder="AdmissionStatus" name="admissionStatus" className="form-control" value={this.state.admissionStatus} onChange={this.changeadmissionStatusHandler}/>
                                   </div>
                                   <div className="form-group">
-                                      <label> year</label>
-                                      <input placeholder=" year" name=" year" className="form-control" value={this.state. year} onChange={this.changeyearHandler}/>
+                                      <label> Year</label>
+                                      <input placeholder=" Year" name=" year" className="form-control" value={this.state. year} onChange={this.changeyearHandler}/>
                                   </div>
                                   <button className="btn btn-success" onClick={this.saveAdmission}>Save</button>
                                   <button className="btn btn-danger"  onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}}>Cancel</button>
