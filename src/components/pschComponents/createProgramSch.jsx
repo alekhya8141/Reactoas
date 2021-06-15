@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProgramSchService from "../../services/programSchService";
+import ProgramSchService from "../../service/programSchService";
 class CreateProgramSch extends Component {
     constructor(props){
         super(props)

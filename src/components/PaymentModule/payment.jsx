@@ -49,9 +49,9 @@ deletePayment(paymentId){
           <table className= "table table-sm table-bordered mt-2"style={{marginLeft:"100px",width:"80%"}}>
             <thead className="table-dark">
               <tr>
+                <th> PaymentId</th>
                 <th> EmailIdOfStudent</th>
                 <th> PaymentAmount</th>
-                <th> PaymentDescription</th>
                 <th> PaymentDate</th>
                 <th> PaymentStatus</th>
                 <th colSpan="3">Actions</th>
@@ -61,9 +61,9 @@ deletePayment(paymentId){
               this.state.payment.map(
                 pay =>
                 <tr key={pay.paymentId}>
+                  <td>{pay.paymentId}</td>
                   <td>{pay.emailIdOfStudent}</td>
                   <td>{pay.paymentAmount}</td>
-                  <td>{pay.paymentDescription}</td>
                   <td>{pay.paymentDate}</td>
                   <td>{pay.paymentStatus}</td>
                   <td>
