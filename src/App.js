@@ -29,7 +29,6 @@ import UpdatePayment from './components/PaymentModule/updatePayment';
 import ViewPayment from './components/PaymentModule/viewPayment';
 import PaymentMethod from "./components/PaymentModule/paymentPage";
 import ApplicationForm from "./components/ApplicationModule/applicationPage"
-import ApplicationDetails from "./components/ApplicationModule/applicationDetails"
 import ListCourseComponent from './components/course/ListCourseComponent';
 import CourseDetails from './components/course/CourseDetails';
 import UpdateCourseComponent from './components/course/UpdateCourseComponent';
@@ -97,7 +96,6 @@ function App() {
           <Route path="/update-payments/:paymentId" component={UpdatePayment}></Route>
           <Route path="/makepayment" component={PaymentMethod}></Route>
           <Route path="/applicationform" component={ApplicationForm}></Route>
-          <Route path="/a" component={ApplicationDetails}></Route>
           <Route path="/ahome" exact component={AdminHome}></Route>
           <Route path="/course" component={ListCourseComponent}></Route>
           <Route path="/add-course" component={CourseDetails}></Route>
