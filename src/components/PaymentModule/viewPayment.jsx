@@ -15,6 +15,9 @@ class ViewPayment extends Component {
             this.setState({payment: res.data});
         })
     }
+    cancel(){
+        this.props.history.push('/payments');
+    }
     render() { 
         return ( 
             <div className="card border-dark col-md-6 offset-md-3" style={{marginBottom:"100px", marginTop:"100px"}}>
@@ -35,10 +38,6 @@ class ViewPayment extends Component {
                         <div>{this.state.payment.paymentAmount}</div>
                     </div>
                     <div className ="row">
-                        <label><b> PaymentDescription: </b></label>
-                        <div>{this.state.payment.paymentDescription}</div>
-                    </div>
-                    <div className ="row">
                         <label><b> PaymentDate: </b></label>
                         <div>{this.state.payment.paymentDate}</div>
                     </div>
@@ -46,7 +45,8 @@ class ViewPayment extends Component {
                         <label><b> PaymentStatus: </b></label>
                         <div>{this.state.payment.paymentStatus}</div>
                     </div>
-                    
+                    <button className="btn btn-danger float-right" onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}}>Cancel</button>
+
                 </div>
 
                 </div>

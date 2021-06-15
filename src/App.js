@@ -28,8 +28,9 @@ import Payment from './components/PaymentModule/payment';
 import UpdatePayment from './components/PaymentModule/updatePayment';
 import ViewPayment from './components/PaymentModule/viewPayment';
 import PaymentMethod from "./components/PaymentModule/paymentPage";
-import ApplicationForm from "./components/ApplicationModule/applicationPage"
-import ApplicationDetails from "./components/ApplicationModule/applicationDetails"
+import PaymentForm from "./components/PaymentModule/paymentForm";
+
+import ApplicationForm from "./components/ApplicationModule/applicationForm"
 import ListCourseComponent from './components/course/ListCourseComponent';
 import CourseDetails from './components/course/CourseDetails';
 import UpdateCourseComponent from './components/course/UpdateCourseComponent';
@@ -59,14 +60,13 @@ import CollegePage from './components/collegePage';
 import CourseHome from './components/coursehome';
 import HomeLogout from './components/homeLogout';
 import UniversityPage from './components/universityPage';
-import addressForm from './components/Addressmodule/addressForm';
 
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
+        <switch>
           <Route exact path="/university/add" component={AddUniversity} />
           <Route path="/update-university/:universityId" component={UpdateUniversity} />
           <Route path="/view-university/:universityId" component={ViewUniversity} />
@@ -92,8 +92,6 @@ function App() {
           <Route path="/documentform" component={Documentform}></Route>
           <Route path="/applications" component={Application}></Route>
 
-=======
-</Switch>
       </div>
     </Router>
   );

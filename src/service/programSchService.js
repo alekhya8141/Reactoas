@@ -1,5 +1,5 @@
 import axios from "axios";
-const PROGRAMSCH_API_BASE_URL="http://localhost:8081//programscheduled";
+const PROGRAMSCH_API_BASE_URL="http://localhost:8082//programscheduled";
 
 class ProgramSchService{
     async getAllProgramSchedule() {

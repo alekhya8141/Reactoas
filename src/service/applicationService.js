@@ -20,5 +20,8 @@ class ApplicationService {
   async deleteApplication(applicationId) {
     return await axios.delete(APPLICATION_API_BASE_URL + "/" + applicationId);
   }
+  async getApplicationByApplicantFullName(applicantFullName){
+    return await axios.get(APPLICATION_API_BASE_URL + "/" + applicantFullName );
+  }
 }
 export default new ApplicationService();
