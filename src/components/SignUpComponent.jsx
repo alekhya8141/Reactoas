@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import UserService from "../../src/service/UserService";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./signupLogin.css";
+import HeaderComponent from "./Header";
+import Footer from "./Footer";
 import {
   Facebook,
   Google,
@@ -71,6 +73,8 @@ class Register extends Component{
     
 render(){
     return(
+      <div>
+        <HeaderComponent/>
       <div id="hellooo">
       {/* <header className="header">
         <nav className="navbar navbar-expand-lg navbar-light py-3">
@@ -279,6 +283,8 @@ render(){
                   </p>
                 </div>
              </div> 
+      </div>
+      <Footer/>
       </div>
     )
 }

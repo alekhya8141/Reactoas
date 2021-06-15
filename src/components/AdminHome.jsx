@@ -65,8 +65,9 @@ class AdminHome extends React.Component {
                    Program
               </Link>
             </li>
-
-                   ProgramSchedule
+            <li>
+              <Link to="/programscheduled">
+                   Program Schedule
               </Link>
             </li>
             <li>

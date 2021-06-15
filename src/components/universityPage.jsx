@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { setUniversities } from "./action/university_action";
 import HeaderComponent from "./Header";
 import Footer from "./Footer";
+import "./homeform.css"
 const { useEffect } = React;
 
 const axios = require("axios");
@@ -25,7 +26,7 @@ function UniversityPage() {
   console.log(universities);
 
   return (
-    <div>
+    <div class="homeform">
       <HeaderComponent />
       <section id="specs" class="specs-section-head">
         <div class="container">
@@ -33,7 +34,7 @@ function UniversityPage() {
             <div class="col-12">
               <h2 class="heading">
                 <strong>
-                  University List
+                  University
                 </strong>
               </h2>
             </div>
@@ -45,10 +46,13 @@ function UniversityPage() {
           {universities.length &&
             universities.map((uni) => (
               <Col key={uni.universityId}>
-                <Card>
+                <Card style={{ marginBottom: '.5rem' }}>
                   <Card.Body>
                     <Card.Title>{uni.name}</Card.Title>
+                    <span><em>{uni.name}</em> is one of the top ranking universities in India, offering a wide range of undergraduate, postgraduate and doctoral programs in Engineering,&nbsp;...</span>
+                    <a  href="http://localhost:3000/collegepage"><button className="btn btn-outline-primary">view</button></a>
                   </Card.Body>
+                  
                 </Card>
               </Col>
             ))}

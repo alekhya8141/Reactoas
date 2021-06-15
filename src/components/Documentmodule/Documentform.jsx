@@ -1,5 +1,8 @@
 import React,{ Component } from 'react'
 import DocumentService from '../../service/DocumentService'
+import HeaderLogout from "../headerLogout";
+import Footer from "../Footer";
+import "../homeform.css"
   
 class Documentform extends Component{
     constructor(props){
@@ -49,27 +52,28 @@ class Documentform extends Component{
     }
 render(){
     return(
-        <div>
-            <div className = "container-md" >
+        <div class="homeform">
+            <HeaderLogout/>
+            <div className = "container-md" style={{ marginBottom: "50px", marginTop: "50px" }}>
                 <div className = "row">
                     <div className = "card col-md-6 offset-md-3 offset-md-3">
                         <h3 className = "text-center">DocumentForm</h3>
                           <div className = "card-body">
                               <form>
-                                  <div className="form-group">
-                                      <label>DocumentName</label>
+                                  <div className="form-group text-left">
+                                      <label>DocumentName:</label>
                                       <input placeholder="DocumentName" name="documentName" className="form-control" value={this.state.documentName} onChange={this.changedocumentNameHandler}/>
                                   </div>
-                                  <div className="form-group">
-                                      <label>DocumentUrl</label>
+                                  <div className="form-group text-left">
+                                      <label>DocumentUrl:</label>
                                       <input placeholder="DocumentUrl" name="documentUrl" className="form-control" value={this.state.documentUrl} onChange={this.changedocumentUrlHandler}/>
                                   </div>
-                                  <div className="form-group">
-                                      <label>ApplicantId</label>
+                                  <div className="form-group text-left">
+                                      <label>ApplicantId:</label>
                                       <input placeholder="ApplicantId" name="applicantid" className="form-control" value={this.state.applicantid} onChange={this.changeapplicantidHandler}/>
                                   </div>
-                                  <div className="form-group">
-                                      <label>EmailId</label>
+                                  <div className="form-group text-left">
+                                      <label>EmailId:</label>
                                       <input placeholder="EmailId" name="emailid" className="form-control" value={this.state.emailid} onChange={this.changeemailidHandler}/>
                                   </div>
                                   <button className="btn btn-primary float-left"  onClick={this.Back.bind(this)} style={{marginLeft:"10px"}}>Back</button>
@@ -79,6 +83,7 @@ render(){
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

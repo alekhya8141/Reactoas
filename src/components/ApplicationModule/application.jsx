@@ -84,9 +84,7 @@ class Application extends Component {
             </button>
           </form>
             <table
-              className="table table-sm table-bordered mt-2 "
-              style={{ marginLeft: "20px", width: "80%" }}
-            >
+              className="table table-sm table-bordered mt-2 ">
               <thead className="table-dark">
                 <tr>
                   <th>ApplicationId</th>
@@ -96,6 +94,9 @@ class Application extends Component {
                   <th>Percentage</th>
                   <th>Goals</th>
                   <th>EmailId</th>
+                  <th>College Name</th>
+                  <th>Course Name</th>
+                  <th>Branch Name</th>
                   <th>ApplicationStatus</th>
                   <th colSpan="3">Actions</th>
                 </tr>
@@ -110,6 +111,9 @@ class Application extends Component {
                     <td>{app.finalYearPercentage}</td>
                     <td>{app.goals}</td>
                     <td>{app.emailId}</td>
+                    <td>{app.collegeName}</td>
+                    <td>{app.courseName}</td>
+                    <td>{app.branchName}</td>
                     <td>{app.applicationStatus}</td>
 
                     <td>
@@ -145,14 +149,14 @@ class Application extends Component {
               </tbody>
             </table>
           </div>
-          <button
+        </div>
+        <button
             className="btn btn-info size-lg"
             style={{ marginLeft: "120px" }}
             onClick={this.goback.bind(this)}
           >
             <i className="fa fa-arrow-left "></i>
           </button>
-        </div>
       </div>
     );
   }

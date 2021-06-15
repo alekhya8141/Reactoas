@@ -26,7 +26,7 @@ class Home extends Component {
         <br />
         <div class="container">
           <div>
-            <h2>Popular Links </h2>
+            <h2 class="pop">Popular Links </h2>
             <div class="row">
               <div class="col-lg-4">
                 <img class="img" src="Images\popularimg1.jpg" alt="" width="330" height="160" />
@@ -51,7 +51,7 @@ class Home extends Component {
           <br />
           <br />
           <div>
-            <h2>News</h2>
+            <h2 class="news">News</h2>
             <div class="row">
               <div class="col-lg-4">
                 <img class="img" src="Images\News1.jpg" alt="" width="350" height="160" />
@@ -69,7 +69,7 @@ class Home extends Component {
             <br/>
           <br/>
             <div>
-            <h2>Explore</h2>
+            <h2 class="exp">Explore</h2>
             <div class="row">
               <div class="col-lg-4">
                 <img class="img" src="Images\exp1.jpg" alt="" width="330" height="160" />

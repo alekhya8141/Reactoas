@@ -5,6 +5,7 @@ import "./signupLogin.css";
 import {LockFill } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import HeaderComponent from "./Header";
+import Footer from "./Footer";
 
 // import {} from
 
@@ -40,18 +41,9 @@ class LoginComponent extends Component {
 
   render() {
     return (
-      <div>
-      <HeaderComponent/>
       <div id="helloo">
-        {/* <header className="header">
-          <nav className="navbar navbar-expand-lg navbar-light py-3">
-            <div className="container">
-              <a href="#" className="navbar-brand">
-                MedEasy
-              </a>
-            </div>
-          </nav>
-        </header> */}
+      <HeaderComponent/>
+      <div >
         <div>
           <div className="row py-5 mt-4 align-items-center">
             <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
@@ -63,6 +55,7 @@ class LoginComponent extends Component {
               </h3>
             </div>
             <div className="col-md-7 col-lg-6 ml-auto">
+            <h3 className="text-center"><b>LOGIN</b></h3>
               <form action="#">
                 <div id="row">
                   <div className="input-group col-lg-12 mb-4">
@@ -119,6 +112,7 @@ class LoginComponent extends Component {
           </div>
         </div>
     </div>
+    <Footer/>
     </div>
     );
   }
